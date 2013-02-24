@@ -5,7 +5,7 @@ date: 2011-05-29 09:11
 comments: true
 categories: [File system, ssh, fusefs]
 ---
-Well, there is nothing like a simple and easy innovative solutions to save the day -it's been around for quite a while and never really needed it until now ...
+{% img left /assets/images/OpenSSH.jpg 'SSH' %}Well, there is nothing like a simple and easy innovative solutions to save the day -it's been around for quite a while and never really needed it until now ...
 
 _**Use Case**_**:**
 
@@ -22,6 +22,8 @@ add fuse to your /etc/modules \[edit /etc/modules and add the word fuse on a sin
 
     vi /etc/modules ...
     
+
+<!-- more -->
 
 On CentOs / Redhat / Fedora \[ you need to enable _**rpmforge**_ / _**epel**_ repository \] - ([see install snippet below][1]):
 
