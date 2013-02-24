@@ -7,7 +7,7 @@ title: My Cup of Tea
 subtitle: Things I do, Things I say
 author: Haggai Philip Zagury
 simple_search: http://google.com/search
-description:
+description: On CM & DevOps and more ...
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -17,7 +17,7 @@ date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
-subscribe_email:
+subscribe_email: 
 # RSS feeds can list your email address if you like
 email:
 
@@ -33,6 +33,7 @@ destination: public
 plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
+category_title_prefix: "Category: "
 markdown: rdiscount
 pygments: false # default python pygments have been replaced by pygments.rb
 
@@ -59,9 +60,9 @@ default_asides: [asides/gravatar.html, asides/recent_posts.html, asides/github.h
 
 # Github repositories
 github_user: hagzag
-github_repo_count: 0
+github_repo_count: 5
 github_show_profile_link: true
-github_skip_forks: true
+github_skip_forks: false
 
 # Twitter
 twitter_user: hagzag
@@ -89,8 +90,8 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: hagzag
-disqus_show_comment_count: false
+# disqus_short_name: hagzagsblog
+# disqus_show_comment_count: false
 
 # Google Analytics
 google_analytics_tracking_id: UA-38752767-1
@@ -101,3 +102,8 @@ facebook_like: true
 # Gravatar
 gravatar_email: hagzag@gmail.com
 
+#Coderwall
+coderwall_user: hagzag
+
+#Facebook Comments
+facebook_appid: 121979457984565
