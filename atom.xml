@@ -1,16 +1,995 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[My Cup of Tea]]></title>
   <link href="http://hagzag.github.com/atom.xml" rel="self"/>
   <link href="http://hagzag.github.com/"/>
-  <updated>2013-02-24T00:03:15+02:00</updated>
+  <updated>2013-02-25T00:04:59+02:00</updated>
   <id>http://hagzag.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Haggai Philip Zagury]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Why Octopress ?]]></title>
+    <link href="http://hagzag.github.com/blog/2013/02/24/why-octopress/"/>
+    <updated>2013-02-24T09:11:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2013/02/24/why-octopress</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/octopress.png" title="'Octopress Logo'" >
+Yes I am a Hacker wannabe [Octopress slogen is &#8220;A blogging framewrok for hackers&#8221; &#8230; ].</p>
+
+<p>Now seriously, i&#8217;ve been down the road with many blog / CMS engines, <a href="http://ww.drupal.org">Drupal</a>, <a href="http://wordpress.org/">Wordpress</a> and all I really wanted was
+a note-pad with no fancy WYSIWYG<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup> editor with a bazillion plug-ins which will enable me to embed images / videos or a simple syntax highlighter.</p>
+
+<p>So I found <a href="http://octopress.org/">Octopress</a> which is just frekin&#8217; simple to use + it&#8217;s cheap [hosting on Github Pages]</p>
+
+<blockquote><p>Octopress is a framework designed by Brandon Mathis for Jekyll, the blog aware static site generator powering Github Pages. To start blogging with Jekyll, you have to write your own HTML templates, CSS, Javascripts and set up your configuration. But with Octopress All of that is already taken care of. Simply clone or fork Octopress, install dependencies and the theme, and you’re set.</p></blockquote>
+
+<ul>
+<li>Social links preloaded, Facebook, Twitter, disqus &amp; other are built-in</li>
+<li>Syntax high-lighting built-in</li>
+<li>there are more good reasons <a href="http://octopress.org/docs/">here</a> <a href="https://github.com/imathis/octopress/wiki/3rd-party-plugins">and here</a></li>
+</ul>
+
+
+<p>The only problem was / is migrating all the stuff I have on-line so that is still a work in progress &#8230;
+->So I guess I&#8217;ll have to see if this ones sticks!&lt;-</p>
+
+<div class="footnotes">
+    <ol>
+        <li id='fn:1'><p> WYSIWYG :: What You See Is What You Get &#8230;
+<a href='#fnref:1' rev='footnote'>↩</a></p>
+</li>
+    </ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Adding Facebook comments to Octopress]]></title>
+    <link href="http://hagzag.github.com/blog/2013/02/24/adding-facbook-comments-to-octopress/"/>
+    <updated>2013-02-24T08:47:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2013/02/24/adding-facbook-comments-to-octopress</id>
+    <content type="html"><![CDATA[<p>Inspired by <a href="http://blog.grambo.me.uk/blog/2012/02/20/adding-facebook-comments-to-octopress/">This post</a> Comments are now in FaceBook (Sorry disqus &#8230;).</p>
+
+<p>So now you should see something like the following (If you have JavaScript enabled of-course):
+<img src="http://hagzag.github.com/assets/images/FB_comments.png" title="FaceBook Comments Example" alt="FaceBook Comments" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction 2 Opscode Chef (or chef for newbiees)]]></title>
+    <link href="http://hagzag.github.com/blog/2013/02/24/introduction-2-opscode-chef-slash-or-chef-for-newbiees-slash/"/>
+    <updated>2013-02-24T00:21:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2013/02/24/introduction-2-opscode-chef-slash-or-chef-for-newbiees-slash</id>
+    <content type="html"><![CDATA[<p>This Prezi was presented @: <strong>January</strong><strong><strong><strong>16th, 2013 (</strong><a href="http://meetup.tikalk.com/events/98888802/">meetup / conversation details here</a></strong>)</strong></p>
+
+<div markdown="1" align="center">
+<iframe src="http://prezi.com/embed/4z7dsc33f4ne/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=no&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="600" height="450" frameBorder="0"></iframe>
+</div>
+
+
+<p>There where a few issues which I fixed &amp; added to this prezi since the meetup.</p>
+
+<p>As always any comments are welcome :)</p>
+
+<p>Enjoy</p>
+
+<p>HP</p>
+
+<!-- more -->
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Writing a Chef Cookbook, or writing your first cookbook]]></title>
+    <link href="http://hagzag.github.com/blog/2013/01/20/writing-a-chef-cookbook/"/>
+    <updated>2013-01-20T13:00:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2013/01/20/writing-a-chef-cookbook</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/Opscode_chef_logo.png" title="'Chef Logo'" > In continuation to a Chef Introduction session we had <a href="http://meetup.tikalk.com/events/98888802/">last week on meetup</a>, I thought a blog post was called for in order to emphasize the process of writing a recipe. And/Or working with chef in general as a buy product of that.</p>
+
+<p>I will be using the basic &#8220;ntp&#8221; example Opscode uses on their wiki, but in order to understand the components of a recipe I will stretch it a bit further in order to show the true power of Attributes and Templates.</p>
+
+<p>At the end of this post [or now if you really insist] you can clone <a href="https://github.com/tikalk/chef-intro-repo">https://github.com/tikalk/chef-intro-repo</a> and see the ntp recipe alongside other stuff which was presented in the meetup.</p>
+
+<!-- more -->
+
+
+<p><strong>Prequisets:</strong></p>
+
+<ol>
+<li>A Chef server [see: <a href="http://www.tikalk.com/alm/blog/installing-chef-server">http://www.tikalk.com/alm/blog/installing-chef-server</a> if you want and set one up &#8230;]</li>
+<li>Configured Knife workstation</li>
+</ol>
+
+
+<p><strong>Step 1: Install the service you want to recipe &#8230; </strong></p>
+
+<pre><code>yum install ntp
+rpm -ql ntp
+</code></pre>
+
+<p>Identify:</p>
+
+<ul>
+<li><strong>package name</strong> you wish to install</li>
+<li>Files which are <strong>template</strong> candidates [which chef will need to populate with your data]</li>
+</ul>
+
+
+<p>I found the following:</p>
+
+<ul>
+<li>service name &#8220;ntpd&#8221; [ init file name: /etc/rc.d/init.d/ntpd ]</li>
+<li>configuration file our tempalte candidate &#8220;/etc/ntp.conf&#8221; [ also found via rpm -ql ]</li>
+</ul>
+
+
+<p><strong>Step 2: Setup a git repository [clone opscode&#8217;s &#8220;template&#8221; repository]</strong></p>
+
+<pre><code>git clone git://github.com/opscode/chef-repo.git
+</code></pre>
+
+<p><strong>Step 3: Create a cookbook  [named ntp]</strong></p>
+
+<pre><code>cd ~/chef-repo
+knife cookbook create ntp
+</code></pre>
+
+<p>The knife command above will create the foloowing structure [under cookbooks directory]:</p>
+
+<pre><code>attributes/ 
+definitions/
+files/ 
+libraries/
+**metadata.rb** 
+providers/ 
+README.rdoc 
+**recipes/** 
+resources/ 
+**templates/** 
+</code></pre>
+
+<p>We <strong>won&#8217;t</strong> be using all of these in this tutorial &#8230; highlighted are the ones we are going to use (at this stage)</p>
+
+<p><strong>Step 4: Create the recipe</strong></p>
+
+<pre><code>vim  cookbooks/ntp/recipes/default.rb
+</code></pre>
+
+<p>Add the following ruby code [<a href="https://github.com/tikalk/chef-intro-repo/blob/d7a67f6a17f5a9308561c9350054223ed9d1f845/cookbooks/ntp/recipes/default.rb">link</a>]:</p>
+
+<pre><code>package "ntp" do
+    action [:install]
+end
+
+template "/etc/ntp.conf" do
+    source "ntp.conf.erb"
+    variables( :ntp_server =&gt; "time.nist.gov" )
+    notifies :restart, "service[ntpd]"
+end
+
+service "ntpd" do
+    action [:enable,:start]
+end
+</code></pre>
+
+<p>The first block of code will use chefs built-in packadge installer providor to use the os&#8217;s package manager (in our case yum/rpm) and use the service name &#8220;ntp&#8221; the one we located whilst installing the package in step1 above.</p>
+
+<p><strong>Step 5: Create a template</strong></p>
+
+<pre><code>vim cookbooks/ntp/templates/default/ntp.conf.erb
+</code></pre>
+
+<p>Unlike files which are placed by chef &#8220;as is&#8221; files under templates folder ending with <strong>erb</strong> are interpolated and created on the <strong>node </strong>during a chef-client run.</p>
+
+<p>The content of the file [<a href="https://github.com/tikalk/chef-intro-repo/blob/d7a67f6a17f5a9308561c9350054223ed9d1f845/cookbooks/ntp/templates/default/ntp.conf.erb">link</a>]:</p>
+
+<pre><code>restrict default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1
+restrict -6 ::1
+server &lt;%= @ntp_server %&gt;
+server  127.127.1.0     # local clock
+driftfile /var/lib/ntp/drift
+keys /etc/ntp/keys
+</code></pre>
+
+<p>In this simple use case line #7 from  cookbooks/ntp/recipes/default.rb will be the one setting the ntp_server parameter for the tempalte file in line #5 of the template above.</p>
+
+<p>At this stage you could create a <strong>role </strong>add this recipe to a<strong>run_list </strong>and it will just work &#8230; until you try to apply this recipe on <strong>ubuntu </strong>for example, there you will find an issue with the service name &#8230; and whilst were at it , let&#8217;s add support for more than one ntp server [in case the single one we added is down :(].</p>
+
+<pre><code>apt-get install ntp
+</code></pre>
+
+<p>Will revieal the issue I just mentioned</p>
+
+<p>and</p>
+
+<pre><code>dpkg -L ntp 
+</code></pre>
+
+<p>will give us the list of files [ /etc/ntp.conf ] and service name [ ntp ] => notice in this case there is no &#8220;d&#8221; at the end.</p>
+
+<p><strong>Step 6: Improovment #1 - adding service name resolution to our recipe</strong></p>
+
+<p>Add an attributes file:</p>
+
+<pre><code>vim  cookbooks/ntp/attributes/default.rb
+</code></pre>
+
+<p>With the following content:</p>
+
+<pre><code>case platform
+when "redhat","centos","fedora","scientific"
+  default[:ntp][:service] = "ntpd"
+when "ubuntu","debian"
+  default[:ntp][:service] = "ntp"
+else
+  default[:ntp][:service] = "ntpd"
+end
+</code></pre>
+
+<p>This case statment will help our recipe in the service name resolution for redhat / centos &amp; other rpm based distros &#8221;<strong>ntpd</strong>&#8221; for ubutnu / debian use &#8221;<strong>ntp</strong>&#8221;.</p>
+
+<p>Let&#8217;s tell our recipe to respect this attribute &#8230;:</p>
+
+<pre><code>package "ntp" do                                
+    action [:install]                           
+end
+
+service node[:ntp][:service] do
+    service_name node[:ntp][:service]
+    action [:enable,:start,:restart]
+end
+
+template "/etc/ntp.conf" do                     
+    source "ntp.conf.erb"                       
+    owner "root"                                
+    group "root"                                
+    mode 0644                                   
+    notifies :restart, resources(:service =&gt; node[:ntp][:service])
+end
+</code></pre>
+
+<p>The diff is in line #7 &amp; line #12 which now uses the node:[ntp][:service] attribute we defined in the <em><strong>attributes.rb</strong></em> file above.</p>
+
+<p><strong>Step 7: Add support for more than 1 ntp server</strong></p>
+
+<p>In cookbooks/ntp/attributes/default.rb file add the following array:</p>
+
+<pre><code>default[:ntp][:servers] = ["0.pool.ntp.org", "1.pool.ntp.org", "2.pool.ntp.org", "3.pool.ntp.org"]
+</code></pre>
+
+<p>And in our template file let&#8217;s add support for more than one line of ntp server:</p>
+
+<pre><code># Generated by Chef for &lt;%= node[:fqdn] %&gt; 
+# node[:fqdn] = ohai data collected on node !
+# Local modifications will be overwritten.
+
+restrict -6 ::1
+#server &lt;%= @ntp_server %&gt;
+
+&lt;% node[:ntp][:servers].each do |ntpsrv| -%&gt;
+  server &lt;%= ntpsrv %&gt; iburst
+  restrict &lt;%= ntpsrv %&gt; nomodify notrap noquery
+&lt;% end -%&gt;
+
+restrict default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1
+
+server  127.127.1.0     # local clock
+driftfile /var/lib/ntp/drift
+keys /etc/ntp/keys
+</code></pre>
+
+<p>As you can see I marked out linet #5 which is our old ntp decleration</p>
+
+<p>and added lines# 7-10:</p>
+
+<pre><code>&lt;% node[:ntp][:servers].each do |ntpsrv| -%&gt;
+  server &lt;%= ntpsrv %&gt; iburst
+  restrict &lt;%= ntpsrv %&gt; nomodify notrap noquery
+&lt;% end -%&gt;
+</code></pre>
+
+<p>chef will itterate over the array and inject the vlaues in our case whilst using defaults we will recieve the following:</p>
+
+<pre><code>  server 0.pool.ntp.org iburst
+ restrict 0.pool.ntp.org nomodify notrap noquery
+  server 1.pool.ntp.org iburst
+ restrict 1.pool.ntp.org nomodify notrap noquery
+  server 2.pool.ntp.org iburst
+ restrict 2.pool.ntp.org nomodify notrap noquery
+  server 3.pool.ntp.org iburst
+ restrict 3.pool.ntp.org nomodify notrap noquery
+</code></pre>
+
+<p>That&#8217;s it all is left is to upload this cookbook to your chef server and add it to one of your nodes and you are good to go.</p>
+
+<pre><code>knife cookbook upload ntp
+</code></pre>
+
+<p>(you might want to bump the version up just so it becomes a habbit - edit the <em><strong>metadata.rb</strong></em> file under the recipies directory).</p>
+
+<p>Coming up [hopefully in the next few days] a test environment for chef cookbooks - I will be taking this example and present how to setup an environment for testing combining Chef-Solo (in case you don&#8217;t have a chef server), <a href="http://www.vagrantup.com/">Vergrant </a>&amp; <a href="https://www.google.co.il/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CDAQFjAA&amp;url=https%3A%2F%2Fwww.virtualbox.org%2F&amp;ei=cdf7UIK1NKTd4QTwp4CQBQ&amp;usg=AFQjCNHpshI_45ZdaFl7Mvf-glSeroKujQ&amp;sig2=470cYUQ3VveKdRKuE-2TYw&amp;bvm=bv.41248874,d.bGE">VirtualBox</a></p>
+
+<p>Fell free to comment / remark :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Chef Server - On CnetOs 5.8]]></title>
+    <link href="http://hagzag.github.com/blog/2012/12/30/installing-chef-server-on-cnetos-5-dot-8/"/>
+    <updated>2012-12-30T01:51:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2012/12/30/installing-chef-server-on-cnetos-5-dot-8</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/Opscode_chef_logo.png" title="'Chef Logo'" > Following the Fuse day (#6) and the very poor documentation and the amount of bugs found in the Chef Solo cookbooks for the Chef OSS server, I put together a set of script which will attempt to clear all the clutter around installing a Chef OSS server.</p>
+
+<p>There is a <a href="https://github.com/tikalk/chef-server-install">Git repository on git hub</a> which will install Chef Server on CentOS 5.8 &amp; 6 and I will be adding support for Ubuntu in the near future (its in the works), there is no magic here just a fair amount of trial and error which led me to automate it - it just was too much time to do manually over and over again &#8230;</p>
+
+<p>During my attempt I was planning on using Chef-Solo to do the work based on <a href="http://wiki.opscode.com/display/chef/Installing+Chef+Server+using+Chef+Solo">this wiki page</a> but there were so many bugs in it which led me to user rble repository.</p>
+
+<!-- more -->
+
+
+<p>So what this script does ?</p>
+
+<ol>
+<li>It requires you to be root</li>
+<li>It will add the required repositories</li>
+<li>Install ruby via rvm (my personal preference)</li>
+<li>Install chef server via rpm</li>
+</ol>
+
+
+<p>see: <a href="https://github.com/tikalk/chef-server-install">https://github.com/tikalk/chef-server-install</a></p>
+
+<p>Enjoy, and I would like to here your feedback.</p>
+
+<p>For the brave guys who do not want to read and just do it &#8230; (it takes ~30 minuets depending on your internet connection)</p>
+
+<p><strong><em>git clone </em></strong><strong><em>https://github.com/tikalk/chef-server-install.git</em></strong></p>
+
+<p><strong><em>cd ./chef-server-install &amp;&amp; setup.sh all</em></strong></p>
+
+<blockquote></blockquote>
+
+<hr />
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DevOps 4 Developers @ Jenkins conference hertzliya]]></title>
+    <link href="http://hagzag.github.com/blog/2012/07/24/devops-4-developers-at-jenkins-conference-hertzliya/"/>
+    <updated>2012-07-24T17:46:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2012/07/24/devops-4-developers-at-jenkins-conference-hertzliya</id>
+    <content type="html"><![CDATA[<p>A talk I gave @ <a href="http://blog.cloudbees.com/2012/07/jenkins-user-conference-in-herzliya.html">Jenkins Conferencee</a> in Hertzliya.
+See presentation on prezi:</p>
+
+<div markdown="1" align="center">
+    <iframe src="http://prezi.com/embed/u4zb3h6s5vql/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=no&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="650" height="500" frameBorder="0"></iframe>
+</div>
+
+
+<p>See other great content &amp; presentations @ <a href="http://www.cloudbees.com/jenkins-user-conference-2012-israel-abstracts.cb">this link</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Achieving ALM with Open Source @ ILTAM]]></title>
+    <link href="http://hagzag.github.com/blog/2011/11/20/achieving-alm-with-open-source-at-iltam/"/>
+    <updated>2011-11-20T23:40:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2011/11/20/achieving-alm-with-open-source-at-iltam</id>
+    <content type="html"><![CDATA[<p>As a big fan of open source &amp; the fact I work for <a href="http://www.tikalk.com">Tikal Knowledge</a>, which provide Open Source Solutions for software development,
+ILTAM - &#8220;The Israeli Users&#8217; Association of Advanced Technologies in Hi-Tech&#8221;, asked me to give my POV on the subject, from and Open Source perspective of course - here it is &#8230;</p>
+
+<div markdown="1" align="center">
+    <iframe src="http://prezi.com/embed/eesk5es7zubx/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=no&amp;autohide_ctrls=0&amp;features=undefined&amp;disabled_features=undefined" width="650" height="500" frameBorder="0"></iframe>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Subversion hot-backup change in 1.6.11]]></title>
+    <link href="http://hagzag.github.com/blog/2011/07/19/Subversion-hot-backup-change-in/"/>
+    <updated>2011-07-19T09:11:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2011/07/19/Subversion-hot-backup-change-in</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/subversion.jpg" title="'Subversion Logo'" >An important notice to users of the hot-backup.py utility which ships with subversion.</p>
+
+<p>I found our nightly backup of subversion was failing with the following error:</p>
+
+<pre><code>svnadmin: Can't open file '/pathtorepo/db/fsfs.conf': No such file or directory
+</code></pre>
+
+<p>What was troubling me was:</p>
+
+<ol>
+<li>How come a file is missing in my svn repository - nothing has changes (As far as I know &#8230; :)</li>
+<li>hot-backup.py script hasen&#8217;t changed much, how come my version has changed ?</li>
+</ol>
+
+
+<p>So I looked up the subversion&#8217;s change log: http://svn.apache.org/repos/asf/subversion/tags/1.6.12/CHANGES which is the latest release (1.6.12) and took a look on my svn machine to find which version was installed and I found 1.6.12 was indeed in talled and in 1.6.11 release notes you will find:</p>
+
+<pre><code>* make 'svnadmin hotcopy' copy the fsfs config file (r905303)
+</code></pre>
+
+<p>In addition I took a look at hot-bakup.py change log under: http://svn.apache.org/viewvc/subversion/trunk/tools/backup/hot-backup.py.in?view=log, and found that indeed the fsfs file has be included in the hotbackup script since the 1.6.11 version of the file (see link speified above).</p>
+
+<p>Googeling on the fsfs.conf subject led me to: http://comments.gmane.org/gmane.comp.version-control.subversion.user/97647 which noted the same exact issue.</p>
+
+<p><strong>How do we solve this issue</strong><strong>?</strong></p>
+
+<ol>
+<li>Create a test repository - svnadmin create /tmp/svntest which will create the fsfs.conf under /tmp/svntest/db/fsfs.conf</li>
+<li>Copy the fsfs.conf to your svnroot/db directory and walla you have the fsfs.conf (what this file does is a different topic)</li>
+</ol>
+
+
+<p>Please note:</p>
+
+<p>1. The svnadmin upgrade -<strong>Doesn&#8217;t add this file so unless you are using an old veriosn of the hot-backup.py script your backups will fail!!!</strong> (beleive me I tried).</p>
+
+<p>2. If you update subverison - don&#8217;t forget to run <em>svnadmin upgrade /pathto yourrepo/</em> or you miss all the point of upgrading</p>
+
+<p>So I&#8217;ve learened that subversion was upgraded (again which doesn&#8217;t say your repository was upgraded!!!) - but when? - considering the fact I am running CentOS - and I didn&#8217;t have to compile SVN from source and start checking the subversion binaries Creation / Update time I used RPM to tell me when subverions was installed and there is was:</p>
+
+<pre><code>[root@dev ~]# rpm -qi subversion
+Name        : subversion                   Relocations: (not relocatable)
+Version     : 1.6.12                       Vendor: Dag Apt Repository
+Release     : 0.1.el5.rf                   Build Date: Tue 22 Jun 2010 12:55:11 PM IDT
+Install Date: Mon 19 Jul 2010 12:36:54 AM IDT      Build Host: lisse.hasselt.wieers.com
+Group       : Development/Tools             Source RPM: subversion-1.6.12-0.1.el5.rf.src.rpm
+Size        : 21247326                         License: BSD
+Signature   : DSA/SHA1, Tue 22 Jun 2010 04:46:18 PM IDT, Key ID a20e52146b8d79e6
+Packager    : Dag Wieers 
+</code></pre>
+
+<p>I think the <a href="http://search.twitter.com/search?q=%231">#1</a> lesson learned here is before you upgrade read the release notes, see if it impacts you environment in any way - then you can upgrade.</p>
+
+<p>Hope you find this useful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mount remote dirs via ssh with sshfs / fuse]]></title>
+    <link href="http://hagzag.github.com/blog/2011/05/29/mount-remote-firsvia-ssh/"/>
+    <updated>2011-05-29T09:11:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2011/05/29/mount-remote-firsvia-ssh</id>
+    <content type="html"><![CDATA[<p>Well, there is nothing like a simple and easy innovative solutions to save the day -it&#8217;s been around for quite a while and never really needed it until now &#8230;</p>
+
+<p><em><strong>Use Case</strong></em><strong>:</strong></p>
+
+<p>we moved Subversion from server A to server B and we wanted to bea ble to utilze the same backup scripts we were using so one (not real elegant way) was to mount the remote location via NFS which has its issues, from time to time you will meet stale NFS records and such so that is almost in all cases out of the question.</p>
+
+<p>A neat solution would be to mount over SSH a specific directory run svnhotbackup and close the share, I took this to another level by utilising this over a VDSL connection which worked like a charm, so how do we do this ?</p>
+
+<p>If you are on Ubuntu (<a href="#aptget">see install snippet below</a>):</p>
+
+<pre><code>sudo apt-get install sshfs
+</code></pre>
+
+<p>add fuse to your /etc/modules [edit /etc/modules and add the word fuse on a single line]</p>
+
+<pre><code>vi /etc/modules ...
+</code></pre>
+
+<p>On CentOs / Redhat / Fedora [ you need to enable <em><strong>rpmforge</strong></em> / <em><strong>epel</strong></em> repository ] - (<a href="#yum">see install snippet below</a>):</p>
+
+<p>on the host you want to mount generate an ssh key by executing</p>
+
+<pre><code>ssh-genkey -t rsa 
+</code></pre>
+
+<p>[press return twice with no passphrase]</p>
+
+<pre><code>ssh-copy-id -i ~/.ssh/id_rsa.pub user@remotehost
+</code></pre>
+
+<ul>
+<li><p>this will automatically add the public key to the ~/.ssh/authorized_keys file on the remote server for the specified user. make a directory representing your remote server</p>
+
+<p>  mkdir /mnt/remoteservername</p></li>
+</ul>
+
+
+<p>Then in any place you can execute [prompt / shell script]:</p>
+
+<pre><code>sshfs username@ipaddress:/remote/directory /mnt/remoteservername
+</code></pre>
+
+<p>then you can of course run:</p>
+
+<pre><code>ls -l /mnt/remoteservername 
+</code></pre>
+
+<p>as if you were running on the local machine. Back to our story above we could noe reference our svn setup as if it was local by running:</p>
+
+<pre><code>svnadmin hotbackup /mnt/remoteservername/svn /my-local-bakcup-directory.
+</code></pre>
+
+<p>This quite neat don&#8217;t you think ?</p>
+
+<p>install snippet Ubuntu 11.04</p>
+
+<pre><code>user@myhost:~$ sudo apt-get install sshfs
+[sudo] password for hagzag: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following NEW packages will be installed:
+  sshfs
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 40.8 kB of archives.
+After this operation, 143 kB of additional disk space will be used.
+Get:1 http://il.archive.ubuntu.com/ubuntu/ natty/main sshfs i386 2.2-1build1 [40.8 kB]
+Fetched 40.8 kB in 0s (164 kB/s)
+Selecting previously deselected package sshfs.
+(Reading database ... 176464 files and directories currently installed.)
+Unpacking sshfs (from .../sshfs_2.2-1build1_i386.deb) ...
+Processing triggers for man-db ...
+Setting up sshfs (2.2-1build1) ...
+</code></pre>
+
+<p>install snippet centos-5.5</p>
+
+<pre><code>yum install fuse-sshfs
+Loaded plugins: downloadonly, fastestmirror, priorities
+Loading mirror speeds from cached hostfile
+ * addons: centos.fastbull.org
+ * base: centos.fastbull.org
+ * epel: mirror01.th.ifl.net
+ * extras: centos.fastbull.org
+ * rpmforge: apt.sw.be
+ * updates: centos.fastbull.org
+158 packages excluded due to repository priority protections
+Setting up Install Process
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package fuse-sshfs.i386 0:2.2-5.el5 set to be updated
+--&gt; Processing Dependency: fuse &gt;= 2.2 for package: fuse-sshfs
+--&gt; Processing Dependency: libfuse.so.2(FUSE_2.2) for package: fuse-sshfs
+--&gt; Processing Dependency: libfuse.so.2(FUSE_2.7) for package: fuse-sshfs
+--&gt; Processing Dependency: libfuse.so.2(FUSE_2.6) for package: fuse-sshfs
+--&gt; Processing Dependency: libfuse.so.2 for package: fuse-sshfs
+--&gt; Processing Dependency: libfuse.so.2(FUSE_2.5) for package: fuse-sshfs
+--&gt; Running transaction check
+---&gt; Package fuse.i386 0:2.7.4-8.el5 set to be updated
+---&gt; Package fuse-libs.i386 0:2.7.4-8.el5 set to be updated
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+=======================================================================================================
+ Package                               Arch            Version            Repository         Size
+=======================================================================================================
+Installing:
+ fuse-sshfs                            i386            2.2-5.el5          rpmforge            51 k
+Installing for dependencies:
+ fuse                                  i386            2.7.4-8.el5        base                83 k
+ fuse-libs                             i386            2.7.4-8.el5        base                72 k
+
+Transaction Summary
+=======================================================================================================
+Install       3 Package(s)
+Upgrade       0 Package(s)
+
+Total download size: 206 k
+Is this ok [y/N]: y
+Downloading Packages:
+(1/3): fuse-sshfs-2.2-5.el5.i386.rpm                                               |  51 kB     00:00     
+(2/3): fuse-libs-2.7.4-8.el5.i386.rpm                                              |  72 kB     00:01     
+(3/3): fuse-2.7.4-8.el5.i386.rpm                                                   |  83 kB     00:00     
+---------------------------------------------------------------------------------------------------------
+Total                                                                      47 kB/s | 206 kB     00:04     
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : fuse-libs       1/3 
+  Installing     : fuse            2/3 
+  Installing     : fuse-sshfs      3/3 
+Installed:
+  fuse-sshfs.i386 0:2.2-5.el5                                                                                                                                                                                  
+Dependency Installed:
+  fuse.i386 0:2.7.4-8.el5  fuse-libs.i386 0:2.7.4-8.el5 Complete!
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Maven Deployment Linker - plug-in]]></title>
+    <link href="http://hagzag.github.com/blog/2011/03/07/maven-deployment-linker-plug-in/"/>
+    <updated>2011-03-07T09:18:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2011/03/07/maven-deployment-linker-plug-in</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/hudson_logo.png" title="'Hudson Logo'" >This plug-in does something so simple yet very useful instead of archiving artifact it will list the deployments performed at build time to the Maven Proxy you are running regardless to the proxy vendor (Archiva, Artifactory or Nexus).
+All you need to do in your maven build is select 1 check-box:</p>
+
+<p><img src="http://hagzag.github.com/assets/images/link2m2deploy.png" title="'Link to maven deployments'" ></p>
+
+<p>You can also filter artifacts with regex.</p>
+
+<p><strong>The result is:</strong></p>
+
+<p><img src="http://hagzag.github.com/assets/images/artifacts.png" title="'artifacts'" ></p>
+
+<p>And the status bar shows:
+<img src="http://hagzag.github.com/assets/images/statusbar.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JBoss, Selenium, Maven, Hudson, M2 Extra Steps & Files Found Trigger plugins playing well together]]></title>
+    <link href="http://hagzag.github.com/blog/2010/09/12/jboss/"/>
+    <updated>2010-09-12T18:09:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/09/12/jboss</id>
+    <content type="html"><![CDATA[<p>JBoss, Selenium, Maven, Hudson, <a href="http://wiki.hudson-ci.org/display/HUDSON/M2+Extra+Steps+Plugin">M2 Extra Steps</a> &amp; <a href="http://wiki.hudson-ci.org/display/HUDSON/Files+Found+Trigger">Files Found Trigger</a> plugins - how do all these work together in a continuous build + Integration test life-cycle ?</p>
+
+<p><strong>The Story - The Use Case</strong>:</p>
+
+<p>We have two projects with two war artifacts which need to be deployed to a JBoss Application Server, whilst both webapps share a common base configuration, although the release life-cycle of each war have no correlation to the other.</p>
+
+<p>In production both application servers are running &amp; serving one another thus, Integration test should cover both JBoss instances &amp; test their web services.</p>
+
+<p>We are using selenium tests for both webapps and they need to run straight after a continuous build of each of the servers mentioned above. That said a change in project A or in project B should trigger the Integration tests job, whilst if either project A or project B are running the integration test plugin shouldn&#8217;t run (at least until both projects / one of them is complete).</p>
+
+<p><strong>The &#8220;work around&#8221; - forcing the &#8220;native Hudson&#8221; configuration</strong> (which we didn&#8217;t go with naturally):</p>
+
+<!-- more -->
+
+
+<p>Create a Job which builds Project A and Project B then as a downstream job will run ITest job. The problems with this method was -</p>
+
+<p><strong>1.</strong> Project A and Project B do not have the same release life-cycle therefore, I would be forced to have a separate build process for their release / chain the release of these webapps.</p>
+
+<p><strong>2.</strong> I would be building one of the projects for nothing (~ 10 minuets penalty) - if nothing changed in Project A / B why build the other for</p>
+
+<p>nothing?</p>
+
+<p>As a matter fo fact Project A doesn&#8217;t change much, our consideration was - Project A will change once in two weeks whilst Project B will change on a daily basis - that is why we needed a smarter solution:</p>
+
+<p><strong>A more Creative </strong><strong>Solution</strong>:</p>
+
+<p><em>Step 1 - configure m2 &#8220;extra steps&#8221; post-build action for Project A &amp; B</em>:</p>
+
+<p>Project A - build a.war, and as a post build task it would copy the a.war into a shared location. For example purposes lets call it <em><strong>/sharedfolder</strong></em>, in Project B we would do the same.</p>
+
+<p>Upon a successful build of Project A and Project B we will result with <em><strong>/sharedfolder</strong></em> with a &amp; b war files in it. Let me point out these are two standard maven jobs which have the mvn clean install (or deploy) life-cycles and with <a href="http://wiki.hudson-ci.org/display/HUDSON/M2+Extra+Steps+Plugin">M2 extra steps plugin</a> you can run a shell / bash which will just copy a &amp; b wars to the <strong><em>/sharedfolder</em></strong>.</p>
+
+<p><img src="http://hagzag.github.com/assets/images/ExtraStepsPost.png" title="'Post M2 steps'" >
+<em><strong>Please note</strong></em>: if running in distributed Hudson make <strong>/sharedfolder </strong>a location both the servers building a, b &amp; ITest Jobs can write to (NFS, SMB mount if you must).<strong><br/>
+</strong></p>
+
+<p><em>Step 2 - Add Files Found Trigger &amp; M2 Extra steps:</em></p>
+
+<p>1. Manage Hudson >> Manage plugins.</p>
+
+<p>2. Install the missing plugins (will be under the available tab if not installed already)</p>
+
+<p>3. Reload / Restart Hudson</p>
+
+<p>_Step 3 - create / configure ITest Job:<br/>
+_</p>
+
+<p>Create a freestyle (or maven depends on selenium configuration) job named <strong>Itest</strong> which has a <a href="http://wiki.hudson-ci.org/display/HUDSON/Files+Found+Trigger">Files Found Trigger</a> (SCM should be configured to checkout the selenium test - may it be Maven / Ant or whatever executes it for you :), in the Files found configuration have <strong><em>/sharedfolder </em></strong><strong>and </strong> <em><strong>a.war, b.war</strong></em> (note the &#8220;,&#8221; delimiter) watched for changes and configure the trigger to run every 5 / 10 minuets according to your preference - so the <strong>Files Found Trigger </strong>will test <em>/sharedfolder every $n minuets for changes in the filesystem and trigger a build accordingly.</em></p>
+
+<p><img src="http://hagzag.github.com/assets/images/FilesChangedTrigger_0.png" title="'Files Changed Trigger'" ></p>
+
+<p>I thought I was finished but The only problem was if either Project A or Project B was running I didn&#8217;t want ITest to run until the Upstream project (either Project a  or b completes) and the built in upstream / downstream doesn&#8217;t support &#8220;wait for either Project A or Project B to complete&#8221;.</p>
+
+<p>So:</p>
+
+<p><em>Step 4 - Add m2 &#8220;extra steps&#8221; pre-build action</em> <em>for Project A &amp; B</em>:</p>
+
+<p>I went back to Project A and Project B configuration and added a pre build snippet which removed <strong><em>/sharedfolder/a.war for Project A and </em></strong><strong><em>/sharedfolder/b.war for Project B.<br/>
+</em></strong>
+<img src="http://hagzag.github.com/assets/images/ExtraStepsPrenPost.png" title="'re & Post steps'" >
+<em>**</em></p>
+
+<p><strong><em>Now I have achieved - </em></strong><em>**</em>The Final result<em>**</em><strong><em>:</em></strong></p>
+
+<p><strong>1. </strong>No parallel building of Project A,B or ITest</p>
+
+<p><strong>2. </strong>ITest will be triggered wither if a.war or b.war will change (that is where the Files Found Trigger comes in)</p>
+
+<p><strong>3. </strong>I can still keep Project A &amp; Project B in their regular continuous life-cycle.</p>
+
+<p>Also<strong>note</strong> <strong>that</strong>: The FS-SCM (<a href="http://wiki.hudson-ci.org/display/HUDSON/File+System+SCM">File System SCM</a>) plugin (which seemed a good candidate at first) - will not work for you in this case, for on each change the Itest project will run. So even if Project A removed a.war this will be treated as a SCM change in the FS, and will trigger a new ITest build.</p>
+
+<p>Hope you find this tip helpful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Configuration Management position – can be done by anyone. Or can it?]]></title>
+    <link href="http://hagzag.github.com/blog/2010/09/12/CM-By-Anyone/"/>
+    <updated>2010-09-12T18:09:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/09/12/CM-By-Anyone</id>
+    <content type="html"><![CDATA[<p>An interesting post on CM / RELENG see: <a href="http://www.dzone.com/links/r/configuration_management_position_can_be_done_by.html">http://www.dzone.com/links/r/configuration_management_position_can_be_done_by.html</a>
+<img src="http://hagzag.github.com/assets/images/iStock_000002678850Small-2.jpg" title="'CM'" >
+I just loved this image so &#8230;
+I think we can add to the What are CM responsibilities? in whole it&#8217;s a great straight to the point article.</p>
+
+<p>Enjoy</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hudson - pinned/pinning plugins]]></title>
+    <link href="http://hagzag.github.com/blog/2010/09/07/hudson-pinned-slash-pinning-plugins/"/>
+    <updated>2010-09-07T19:14:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/09/07/hudson-pinned-slash-pinning-plugins</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/hudson_logo.png" title="'Hudson Logo'" >If you wish to &#8220;hang on&#8221; to a certain plugin which shipps with hudson.war just unpin it in the Manage Hudson >> Manage Plugins page - this option is availabe sine <a href="http://www.hudson-ci.org/download/war/1.374/hudson.war">1.374 release</a> (and you can alwasy grab the latest @: <a href="http://www.hudson-ci.org/latest/hudson.war">latest</a>)</p>
+
+<p>See full explanation below quoted from <a href="http://wiki.hudson-ci.org">hudson wiki</a>:</p>
+
+<p>The notion of <strong>pinned plugins</strong> applies to plugins that are bundled with Hudson, such as the Subversion plugin.</p>
+
+<p>Normally, when you upgrade/downgrade Hudson, its built-in plugins overwrite whatever versions of the plugins you currently have in $HUDSON_HOME. This ensures that you use the consistent version of those plugins. However, this behavior also means that those plugins can be never manually updated, as every time you start Hudson they&#8217;ll be replaced by the bundled versions.</p>
+
+<p>So when you manually update those bundled plugins, Hudson will mark those plugins as pinned to the particular version. Pinned plugins will never be overwritten by the bundled plugins during Hudson boot up. However, by definition, with pinned plugins you lose the benefit of automatic upgrade when you upgrade Hudson.</p>
+
+<p>So the plugin manager in Hudson allows you to explicitly unpin plugins. On file system, Hudson creates an empty file called $HUDSON_HOME/plugins/plugin.hpi.pinned to indicate the pinning. This file can be manually created/deleted to control the pinning behavior.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Remove the All view in Hudson + view enhancement plugins]]></title>
+    <link href="http://hagzag.github.com/blog/2010/09/01/remove-the-all-view-in-hudson-plus-view-enhancement-plugins/"/>
+    <updated>2010-09-01T19:22:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/09/01/remove-the-all-view-in-hudson-plus-view-enhancement-plugins</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/hudson_logo.png" title="'Hudson Logo'" >I had tow motivations of getting rid of the All view</p>
+
+<ol>
+<li>The <em><strong>All view</strong></em> is quite annoying don&#8217;t you think? After using Hudson for a while you have tens/hundreds of jobs lined up in a huge list - who needs that right.</li>
+<li>I wanted a &#8221;<em><strong>hidden jobs section</strong></em>&#8221; - Jobs no one but myself (and who ever needs access to it) can see.</li>
+</ol>
+
+
+<p>In order to get rid of it (the <em><strong>All view</strong>)****</em>simply:
+ <!-- more --></p>
+
+<ol>
+<li>Create a new view call it &#8220;xyz&#8221; and add what ever you want to it - and there are quite a few plugins you can adopt for see examples <a href="#vep">below</a>,</li>
+<li>Navigate to hudson >> configure hudson (http://[hudson_url]/hudson/configure) and chenge the default view to your &#8220;xyz&#8221; view.</li>
+<li>Select the <em><strong>All view</strong></em> in Hudson&#8217;s home page and you should be able to delete it.</li>
+</ol>
+
+
+<p>View Enhancement plugins:</p>
+
+<ul>
+<li><a href="http://wiki.hudson-ci.org/display/HUDSON/Sectioned+View+Plugin">Sectioned View Plugin</a> &#8212; This plugin provides a new view implementation that can be divided into sections. Each section can display different information about the selected jobs. An extension point is also provided to define new types of sections.</li>
+<li><a href="http://wiki.hudson-ci.org/display/HUDSON/Nested+View+Plugin">Nested View Plugin</a> &#8212; View type to allow grouping job views into multiple levels instead of one big list of tabs.</li>
+<li><a href="http://wiki.hudson-ci.org/display/HUDSON/Status+View+Plugin">Status View Plugin</a> &#8212; View type to show jobs filtered by the status of the last completed build.</li>
+<li><a href="http://wiki.hudson-ci.org/display/HUDSON/Last+Success+Description+Column+Plugin">Last Success Description Column Plugin</a> &#8212; Column showing the last success description that can be configured in views (works with the <a href="http://wiki.hudson-ci.org/display/HUDSON/Description+Setter+Plugin">Description setter plugin</a> )</li>
+<li><p><a href="http://wiki.hudson-ci.org/display/HUDSON/Last+Success+Version+Column+Plugin">Last Success Version Column Plugin</a> &#8212; Adds a column showing last successful version that can be configured in views.</p></li>
+<li><p><a href="http://wiki.hudson-ci.org/display/HUDSON/Last+Failure+Version+Column+Plugin">Last Failure Version Column Plugin</a> &#8212; Adds a column showing last failed version that can be configured in views.</p></li>
+<li><a href="http://wiki.hudson-ci.org/display/HUDSON/Cron+Column+Plugin">Cron Column Plugin</a> &#8212; View column showing the cron trigger expressions that can be configured on a job.</li>
+<li><a href="http://wiki.hudson-ci.org/display/HUDSON/Maven+Info+Plugin">Maven Info Plugin</a> &#8212; Adds columns configurable in views to show info about Maven jobs.</li>
+<li><a href="http://wiki.hudson-ci.org/display/HUDSON/View+Job+Filters">View Job Filters</a> &#8212; Manage multiple views and hundreds of jobs much more easily. This plug-in provides more ways to include/exclude jobs from a view, including filtering by SCM path, and by any job or build status type, as well as &#8220;chaining&#8221; of filters and negating filters.</li>
+<li><a href="http://wiki.hudson-ci.org/display/HUDSON/Job+Type+Column+Plugin">Job Type Column Plugin</a> &#8212; Adds column showing job type that can be configured in views.</li>
+</ul>
+
+
+<p>I&#8217;m sure there are others &#8230;</p>
+
+<p>Hope you find this useful I know I did :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The hudson plug-ins you can't live without]]></title>
+    <link href="http://hagzag.github.com/blog/2010/08/27/The-hudson-plugins-you-cant-live-without/"/>
+    <updated>2010-08-27T09:18:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/08/27/The-hudson-plugins-you-cant-live-without</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/hudson_logo.png" title="'Hudson Logo'" >This post was originally posted &amp; active @: <a href="http://www.tikalk.com/node/4994">http://www.tikalk.com</a>
+As a big fan of hudson-ci I would like to take a note of the most commonly used hudson plug-ins (at least by me) needed in order to maintain a good build environment.
+This list was collected as part of my experience in the last couple of years. I am sure your may differ then mine mine :).</p>
+
+<p><strong>Setenv plug-in</strong></p>
+
+<p>The <a href="http://wiki.hudson-ci.org/display/HUDSON/Setenv+plug-in">The Setenv plug-in</a> lets you set environment variables for a job upon build execution. During migration from CruiseControl I found this plug-in extremely useful, for I could provide the imported script the exact environment it had on the CC machine without the need to change a thing in the build&#8217;s logic / parameters, this also applied to the following recommended plug-in:</p>
+
+<p><strong>Parameterized Trigger plug-in</strong></p>
+
+<p>The <a href="http://wiki.hudson-ci.org/display/HUDSON/Parameterized+Trigger+plug-in">Parameterized Trigger</a> plug-in lets you add parameters to your build jobs that users enter when they trigger a build. This a very useful plug-in for release or deployment automation, for example, where you want to enter the version number (or label) you want to release or deploy. The biggest feature of this plug-in is the default value so even automatic / SCM triggers get a default value to execute silently.</p>
+
+<p><strong>The <a href="http://wiki.hudson-ci.org/display/HUDSON/Cygpath+plug-in">Cygpath plug-in</a></strong></p>
+
+<p><img class="left" src="http://hagzag.github.com/assets/images/small_cygwin-logo.jpg" title="'Cygpath plug-in'" > for a *nix oriented guy as myself, this was a great help, all our &#8220;special&#8221; shell script do not have to be re-written when we are running builds on Windows nodes - and yest we have too &#8230; :)</p>
+
+<p>The Cygpath gave me the opportunity to share tools between linux and windows machines this gave us the ability to maintain one tool repository for all our slave regardless of their architecture.</p>
+
+<p>And did I forget to say all you need it to enable this and automatically every batch executed on a windows slave will automatically use Cygwin ? from Cygpath wiki:</p>
+
+<ul>
+<li><p>You install Cygwin on all the Windows slaves</p></li>
+<li><p>Jobs on Hudson that assume Unix environment can now run on all the slaves (including Windows ones)</p></li>
+<li><p>In the system configuration, you use Unix paths for all your tools.</p></li>
+</ul>
+
+
+<p><strong>Promoted Builds plug-in</strong></p>
+
+<p><img class="left" src="http://hagzag.github.com/assets/images/promotion.png" title="'Promotion'" >Definitely the #1 plug-in on the list here - this plug-in enables you to do almost anything you can do in a certain Job but run it as a promotion task - if you wish to promote you build to your QA team for testing, or if you want to tag it in SVN or Deploy your artifacts to a maven repository, this is the plug-in you &#8220;cannot live without&#8221;. Without this plug-in you will need to configure a separate job or Bach Task (see <a href="http://wiki.hudson-ci.org/display/HUDSON/Batch+Task+plug-in">batch tasks plug-in</a> for more details) for every task you want to perform on your build - which makes managing Hudson job a nightmare &#8230;</p>
+
+<p><strong>Clover plug-in</strong></p>
+
+<p><img class="left" src="http://hagzag.github.com/assets/images/logo-clover.png" title="'Clover logo'" >
+<a href="http://www.atlassian.com/software/clover/">Clover</a> is a non-free code coverage tool which is the commercial alternative to Cobertura Emma etc, the Hudson <a href="http://wiki.hudson-ci.org/display/HUDSON/Clover+plug-in">Clover</a> plug-in is an amazing add on which integrates Clover reports and Historical reports into the build flow, which I found extremely helpful. Try configuring Clover to generate historical reports and then publish them to some third-party web server for viewing - this has made Clover integration a breeze, the challenge is even bigger with a distributed build environment which Hudson &amp; Clover plug-in have overcome.</p>
+
+<p><img src="http://hagzag.github.com/assets/images/CloverSS_0.png" alt="" /></p>
+
+<p>If you don&#8217;t have Clover, as mentioned above - the <a href="http://wiki.hudson-ci.org/display/HUDSON/Cobertura+plug-in">Cobertura</a> and <a href="http://wiki.hudson-ci.org/display/HUDSON/Emma+plug-in">Emma</a> plug-ins are great too which will also integrate with:</p>
+
+<p><strong>Sonar plug-in</strong></p>
+
+<p><img class="left" src="http://hagzag.github.com/assets/images/sonar_0.png" title="'Sonar logo'" >
+Although I am only &#8220;P.O.C ing&#8221; Sonar+Hudson+Clover, The <a href="http://wiki.hudson-ci.org/display/HUDSON/Sonar+plug-in">Sonar</a> plug-in made it trivial to integrate hudson projects with Sonar. <a href="http://sonar.codehaus.org/">Sonar</a> is a powerful open source code quality metrics reporting tool, which displays code quality metrics for multiple projects in a variety of ways on a centralized web location.</p>
+
+<p>For Maven based builds you do not even need to change a line of code in order to get sonar to work which made this module a <a href="http://search.twitter.com/search?q=%232">#2</a> on my &#8220;can&#8217;t live without plug-ins&#8221;.</p>
+
+<p><strong>Sectioned View plug-in<a href="http://wiki.hudson-ci.org/display/HUDSON/Setenv+plug-in"><br/>
+</a></strong></p>
+
+<p><a href="http://wiki.hudson-ci.org/display/HUDSON/Sectioned+View+plug-in">Sectioned view</a> gives you the ability to create a &#8220;Dashboard view&#8221; for your job(s) / project(s) - it is quite feature rich if you take a look at it&#8217;s configuration and it is very simple to comprehend. A great example is taken from the plug-ins wiki page see:</p>
+
+<p><img src="http://hagzag.github.com/assets/images/sectioned.png" alt="Section view scrrenshot" /></p>
+
+<p><strong>Nested Views plug-in</strong></p>
+
+<p><a href="http://wiki.hudson-ci.org/display/HUDSON/Nested+View+plug-in">Nested view</a>s another View type which allows grouping job views into multiple levels instead of one big list of tabs - this is quite useful and the only disadvantage is you can have both a view and jobs in the same page it&#8217;s either a nested view or a list of views - but I presume it will sure be included.</p>
+
+<p><strong>Shelve Project plug-in</strong></p>
+
+<p>If you ever wanted to Hide a jo you are working on and you also would like to prevent it from being triggered by mistake this is the plug-in for you. I often find my self setting up a job and it becomes a work in progress so hiding it to a later time is a great help - this plug-in does just that.</p>
+
+<p><strong>Bugzilla &amp; Jira plug-ins</strong> (&amp; there or others I presume)</p>
+
+<p><img class="left" src="http://hagzag.github.com/assets/images/bugzilla.png" title="'Bugzilla logo'" >Well the fact I need both in the same Hudson cluster and I can still have them work side by side was really important. In order for this plug-in to serve you well your CM team has to some extra work on your SCM side, that done you got yourself a link directly into your bug tracking system - the latest versions, query <a href="http://wiki.hudson-ci.org/display/HUDSON/Bugzilla+plug-in">Bugzilla</a> &amp; <a href="http://wiki.hudson-ci.org/display/HUDSON/JIRA+plug-in">Jira</a> and can display the Bug details.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Managing drupal with Drush (Drupal Shell)]]></title>
+    <link href="http://hagzag.github.com/blog/2010/08/27/TManage-Drupal-With-Drush/"/>
+    <updated>2010-08-27T09:18:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/08/27/TManage-Drupal-With-Drush</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/drush.png" title="'Drush Logo'" >Well, those of you who know me now I&#8217;ve become a very big Drupal fan and one of the tools that will make your life much easier is <a href="http://drupal.org/project/drush">Drush</a>. Drush short for Drupal Shell and it works just like one.</p>
+
+<p>Download <a href="http://drupal.org/project/drush">Drush</a> and add it to your path - assuming you are using unix/linux (if you are using Windows then a <a href="http://drupal.org/node/330023">tutorial can be found here</a> it actually works I&#8217;ve tried it).</p>
+
+<p>Drush dl will download latest stable Drupal to the current location ($PWD) and you are ready for your Drupal installation - OK so the bootstrap process isn&#8217;t that simple because you still need to setup your environment (http, php, mysql/some other supported DB) but still it takes are of the downloading part making sure you are using the latest version etc.</p>
+
+<p>The real power in Drush comes when you have a large site with a bundle of distributed modules, and you need to start managing dependencies and versions. The problem with the standard way, http://yoursite/admin/build/modules, is:</p>
+
+<ul>
+<li><p>It takes a year to load the page</p></li>
+<li><p>In order to solve dependencies you need to:</p></li>
+<li><p>Take a note of what you need to download</p></li>
+<li>Go to http://drupal.org/project/modules</li>
+<li>Search and download</li>
+<li>Upload to your server</li>
+</ul>
+
+
+<p>This seems like to much work - Drush does all that for you, just cd to your Drupal installation directory run <em><strong>drush dl <module name\></strong></em> and Drush will get it and extract it for you under your sites/default/modules directory.</p>
+
+<p>Another bonus is you don&#8217;t get stuck with those tar.gz files you need to manually remove after enabling the module.</p>
+
+<p>Thats not all, <em><strong>drush en <module name\></strong></em> &amp; <em><strong>drush up <module name\> </strong></em>will enable the module (again no need to navigate to sites/all/modules and use the check-box.</p>
+
+<p>If you run <em><strong>drush up</strong> </em>with no args Drush will attempt to update your Drupal installation and all the modules that need updates - be careful here for you do not want to break anything, for the upgrade includes your database tables !!!._<br/>
+_</p>
+
+<p>The last &#8220;bonus&#8221; is that Drush stores all the updated modules / files in &lt;site_root>/backup so you have all the old / updated data backed up in case you need to rollback (been there done that).</p>
+
+<p>For the full list of what drush can do for you - for exmaple if you rn multipul sites from the same drupal case and other options .. see drush help:</p>
+
+<p><code>_[me@mybox modules]# drush --help  
+Execute a drush command. Run \</code>drush help [command]` to view command-specific help.</p>
+
+<p>Examples:<br/>
+ drush dl cck zen                          Download CCK module and Zen theme.                  <br/>
+ drush &#8211;uri=http://example.com status     Show status command for the example.com multi-site. <br/>
+ drush help &#8211;pipe                         A space delimited list of commands                 </p>
+
+<p>Options:<br/>
+ -r <path>, &#8211;root=<path>                  Drupal root directory to use (default: current directory)                <br/>
+ -l <uri>, &#8211;uri=http://example.com        URI of the drupal site to use (only needed in multisite environments)    <br/>
+ -v, &#8211;verbose                             Display extra information about the command.                             <br/>
+ -d, &#8211;debug                               Display even more information, including internal messages.              <br/>
+ -q, &#8211;quiet                               Hide all output                                                          <br/>
+ -y, &#8211;yes                                 Assume &#8216;yes&#8217; as answer to all prompts                                    <br/>
+ -n, &#8211;no                                  Assume &#8216;no&#8217; as answer to all prompts                                     <br/>
+ -s, &#8211;simulate                            Simulate all relevant actions (don&#8217;t actually change the system)         <br/>
+ -i, &#8211;include                             A list of paths to search for drush commands                             <br/>
+ -c, &#8211;config                              Specify a config file to use. See example.drushrc.php                    <br/>
+ -u, &#8211;user                                Specify a user to login with. May be a name or a number.                 <br/>
+ -b, &#8211;backend                             Hide all output and return structured data (internal use only).          <br/>
+ -p, &#8211;pipe                                Emit a compact representation of the command for scripting.              <br/>
+ &#8211;nocolor                                 Suppress color highlighting on log messages.                             <br/>
+ &#8211;show-passwords                          Show database passwords in commands that display connection information. <br/>
+ -h, &#8211;help                                This help system.                                                        <br/>
+ &#8211;php                                     The absolute path to your PHP intepreter, if not &#8216;php&#8217; in the path. _`</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Job configuration change in Hudson 1.372]]></title>
+    <link href="http://hagzag.github.com/blog/2010/08/17/Job-configuration-change-in-Hudson-1.372/"/>
+    <updated>2010-08-17T09:11:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/08/17/Job-configuration-change-in-Hudson-1.372</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/hudson_logo.png" title="'Hudson Logo'" >Yesterday I upgraded hudson to the greatest an latest which was a seamless upgrade.</p>
+
+<p>A very obvious change in the Job configuration form was added instead of &#8221;<strong>Tie Build to a node</strong>&#8221;:
+<img src="http://hagzag.github.com/assets/images/old-slave-daialog_0.png" title="'old_slave_selection_dialog'" ></p>
+
+<p>There is now <strong>&#8220;Restrict where this project can be run&#8221;</strong>:</p>
+
+<p><img src="http://hagzag.github.com/assets/images/new-slave-daialog_0.png" title="'new__slave_selection_dialog'" ></p>
+
+<p>The disadvantage in this feature is if you want to a build to a node you need to know its name / node group name prior to the actual configuration. The Advantage of this feature is you can be more specific in where you want you build to run and with a large number of slaves this is quite important, <strong>Please note</strong>: &#8220;old&#8221; jobs aren&#8217;t affected of this change.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Xvfb to run headless cucumber/selenium tests with Hudson]]></title>
+    <link href="http://hagzag.github.com/blog/2010/07/05/xvfb-tunning-headless-cellnium-test-with-hudson/"/>
+    <updated>2010-07-05T09:11:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/07/05/xvfb-tunning-headless-cellnium-test-with-hudson</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://hagzag.github.com/assets/images/hudson_logo.png" title="'Hudson Logo'" >Needed to run Sellenium tests myself on Linux (RHEL5 &amp; 4) didn&#8217;t have this article to help me then see:</p>
+
+<p><a href="http://markgandolfo.com/2010/07/01/hudson-ci-server-running-cucumber-in-headless-mode-xvfb" title="http://markgandolfo.com/2010/07/01/hudson-ci-server-running-cucumber-in-headless-mode-xvfb">http://markgandolfo.com/2010/07/01/hudson-ci-server-running-cucumber-in-&#8230;</a></p>
+
+<p><strong>RHEL4 users please note:</strong></p>
+
+<ol>
+<li>you will need <strong>xorg-x11-Xvfb</strong> and not <strong>xorg-x11-server-Xvfb</strong> as stated in the above article.</li>
+<li>if you need Firefox (well who doesen&#8217;t :) make sure you install it - it isn&#8217;t installed by default on RHEL!.</li>
+</ol>
+
+
+<p>Hope you find this useful (I know I did &#8230;)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java 4 Ever - two thumbs up for the production]]></title>
+    <link href="http://hagzag.github.com/blog/2010/06/26/Java-4-Ever/"/>
+    <updated>2010-06-26T09:11:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/06/26/Java-4-Ever</id>
+    <content type="html"><![CDATA[<p>This video speaks for itself &#8230;</p>
+
+<div markdown="1"><object width="400" height="320" type="application/x-shockwave-flash" data="http://www.koreus.com/video/java-4-ever"> <param name="movie" value="http://www.koreus.com/video/java-4-ever"><embed width="400" height="320" src="http://www.koreus.com/video/java-4-ever" type="application/x-shockwave-flash"></object><br> <a href="http://www.koreus.com/video/java-4-ever.html">Java 4-Ever</a> - <a href="http://www.koreus.com/">Buzz</a>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learn About Continuous Integration With Hudson Directly From the Source]]></title>
+    <link href="http://hagzag.github.com/blog/2010/03/06/laearn-ci-from-the-source/"/>
+    <updated>2010-03-06T09:11:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2010/03/06/laearn-ci-from-the-source</id>
+    <content type="html"><![CDATA[<p>No explanations needed - just watch this video if you can spare the time &#8230;</p>
+
+<div markdown="1">
+<object width="640" height="385"> <param value="http://www.youtube.com/v/6k0S4O2PnTc&amp;hl=en_US&amp;fs=1&amp;" name="movie"> <param value="true" name="allowFullScreen"> <param value="always" name="allowscriptaccess"><embed width="640" height="385" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://www.youtube.com/v/6k0S4O2PnTc&amp;hl=en_US&amp;fs=1&amp;"></object>
+</div>
+
+]]></content>
+  </entry>
   
 </feed>

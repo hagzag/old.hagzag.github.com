@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: recipe | My Cup of Tea]]></title>
+  <link href="http://hagzag.github.com/blog/categories/recipe/atom.xml" rel="self"/>
+  <link href="http://hagzag.github.com/"/>
+  <updated>2013-02-25T00:04:59+02:00</updated>
+  <id>http://hagzag.github.com/</id>
+  <author>
+    <name><![CDATA[Haggai Philip Zagury]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Writing a Chef Cookbook, or writing your first cookbook]]></title>
+    <link href="http://hagzag.github.com/blog/2013/01/20/writing-a-chef-cookbook/"/>
+    <updated>2013-01-20T13:00:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2013/01/20/writing-a-chef-cookbook</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/assets/images/Opscode_chef_logo.png" title="'Chef Logo'" > In continuation to a Chef Introduction session we had <a href="http://meetup.tikalk.com/events/98888802/">last week on meetup</a>, I thought a blog post was called for in order to emphasize the process of writing a recipe. And/Or working with chef in general as a buy product of that.</p>
+
+<p>I will be using the basic "ntp" example Opscode uses on their wiki, but in order to understand the components of a recipe I will stretch it a bit further in order to show the true power of Attributes and Templates.</p>
+
+<p>At the end of this post [or now if you really insist] you can clone <a href="https://github.com/tikalk/chef-intro-repo">https://github.com/tikalk/chef-intro-repo</a> and see the ntp recipe alongside other stuff which was presented in the meetup.</p>
+
+<!-- more -->
+
+
+<p><strong>Prequisets:</strong></p>
+
+<ol>
+<li>A Chef server [see: <a href="http://www.tikalk.com/alm/blog/installing-chef-server">http://www.tikalk.com/alm/blog/installing-chef-server</a> if you want and set one up ...]</li>
+<li>Configured Knife workstation</li>
+</ol>
+
+
+<p><strong>Step 1: Install the service you want to recipe ... </strong></p>
+
+<pre><code>yum install ntp
+rpm -ql ntp
+</code></pre>
+
+<p>Identify:</p>
+
+<ul>
+<li><strong>package name</strong> you wish to install</li>
+<li>Files which are <strong>template</strong> candidates [which chef will need to populate with your data]</li>
+</ul>
+
+
+<p>I found the following:</p>
+
+<ul>
+<li>service name "ntpd" [ init file name: /etc/rc.d/init.d/ntpd ]</li>
+<li>configuration file our tempalte candidate "/etc/ntp.conf" [ also found via rpm -ql ]</li>
+</ul>
+
+
+<p><strong>Step 2: Setup a git repository [clone opscode's "template" repository]</strong></p>
+
+<pre><code>git clone git://github.com/opscode/chef-repo.git
+</code></pre>
+
+<p><strong>Step 3: Create a cookbook  [named ntp]</strong></p>
+
+<pre><code>cd ~/chef-repo
+knife cookbook create ntp
+</code></pre>
+
+<p>The knife command above will create the foloowing structure [under cookbooks directory]:</p>
+
+<pre><code>attributes/ 
+definitions/
+files/ 
+libraries/
+**metadata.rb** 
+providers/ 
+README.rdoc 
+**recipes/** 
+resources/ 
+**templates/** 
+</code></pre>
+
+<p>We <strong>won't</strong> be using all of these in this tutorial ... highlighted are the ones we are going to use (at this stage)</p>
+
+<p><strong>Step 4: Create the recipe</strong></p>
+
+<pre><code>vim  cookbooks/ntp/recipes/default.rb
+</code></pre>
+
+<p>Add the following ruby code [<a href="https://github.com/tikalk/chef-intro-repo/blob/d7a67f6a17f5a9308561c9350054223ed9d1f845/cookbooks/ntp/recipes/default.rb">link</a>]:</p>
+
+<pre><code>package "ntp" do
+    action [:install]
+end
+
+template "/etc/ntp.conf" do
+    source "ntp.conf.erb"
+    variables( :ntp_server =&gt; "time.nist.gov" )
+    notifies :restart, "service[ntpd]"
+end
+
+service "ntpd" do
+    action [:enable,:start]
+end
+</code></pre>
+
+<p>The first block of code will use chefs built-in packadge installer providor to use the os's package manager (in our case yum/rpm) and use the service name "ntp" the one we located whilst installing the package in step1 above.</p>
+
+<p><strong>Step 5: Create a template</strong></p>
+
+<pre><code>vim cookbooks/ntp/templates/default/ntp.conf.erb
+</code></pre>
+
+<p>Unlike files which are placed by chef "as is" files under templates folder ending with <strong>erb</strong> are interpolated and created on the <strong>node </strong>during a chef-client run.</p>
+
+<p>The content of the file [<a href="https://github.com/tikalk/chef-intro-repo/blob/d7a67f6a17f5a9308561c9350054223ed9d1f845/cookbooks/ntp/templates/default/ntp.conf.erb">link</a>]:</p>
+
+<pre><code>restrict default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1
+restrict -6 ::1
+server &lt;%= @ntp_server %&gt;
+server  127.127.1.0     # local clock
+driftfile /var/lib/ntp/drift
+keys /etc/ntp/keys
+</code></pre>
+
+<p>In this simple use case line #7 from  cookbooks/ntp/recipes/default.rb will be the one setting the ntp_server parameter for the tempalte file in line #5 of the template above.</p>
+
+<p>At this stage you could create a <strong>role </strong>add this recipe to a<strong>run_list </strong>and it will just work ... until you try to apply this recipe on <strong>ubuntu </strong>for example, there you will find an issue with the service name ... and whilst were at it , let's add support for more than one ntp server [in case the single one we added is down :(].</p>
+
+<pre><code>apt-get install ntp
+</code></pre>
+
+<p>Will revieal the issue I just mentioned</p>
+
+<p>and</p>
+
+<pre><code>dpkg -L ntp 
+</code></pre>
+
+<p>will give us the list of files [ /etc/ntp.conf ] and service name [ ntp ] => notice in this case there is no "d" at the end.</p>
+
+<p><strong>Step 6: Improovment #1 - adding service name resolution to our recipe</strong></p>
+
+<p>Add an attributes file:</p>
+
+<pre><code>vim  cookbooks/ntp/attributes/default.rb
+</code></pre>
+
+<p>With the following content:</p>
+
+<pre><code>case platform
+when "redhat","centos","fedora","scientific"
+  default[:ntp][:service] = "ntpd"
+when "ubuntu","debian"
+  default[:ntp][:service] = "ntp"
+else
+  default[:ntp][:service] = "ntpd"
+end
+</code></pre>
+
+<p>This case statment will help our recipe in the service name resolution for redhat / centos &amp; other rpm based distros "<strong>ntpd</strong>" for ubutnu / debian use "<strong>ntp</strong>".</p>
+
+<p>Let's tell our recipe to respect this attribute ...:</p>
+
+<pre><code>package "ntp" do                                
+    action [:install]                           
+end
+
+service node[:ntp][:service] do
+    service_name node[:ntp][:service]
+    action [:enable,:start,:restart]
+end
+
+template "/etc/ntp.conf" do                     
+    source "ntp.conf.erb"                       
+    owner "root"                                
+    group "root"                                
+    mode 0644                                   
+    notifies :restart, resources(:service =&gt; node[:ntp][:service])
+end
+</code></pre>
+
+<p>The diff is in line #7 &amp; line #12 which now uses the node:[ntp][:service] attribute we defined in the <em><strong>attributes.rb</strong></em> file above.</p>
+
+<p><strong>Step 7: Add support for more than 1 ntp server</strong></p>
+
+<p>In cookbooks/ntp/attributes/default.rb file add the following array:</p>
+
+<pre><code>default[:ntp][:servers] = ["0.pool.ntp.org", "1.pool.ntp.org", "2.pool.ntp.org", "3.pool.ntp.org"]
+</code></pre>
+
+<p>And in our template file let's add support for more than one line of ntp server:</p>
+
+<pre><code># Generated by Chef for &lt;%= node[:fqdn] %&gt; 
+# node[:fqdn] = ohai data collected on node !
+# Local modifications will be overwritten.
+
+restrict -6 ::1
+#server &lt;%= @ntp_server %&gt;
+
+&lt;% node[:ntp][:servers].each do |ntpsrv| -%&gt;
+  server &lt;%= ntpsrv %&gt; iburst
+  restrict &lt;%= ntpsrv %&gt; nomodify notrap noquery
+&lt;% end -%&gt;
+
+restrict default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1
+
+server  127.127.1.0     # local clock
+driftfile /var/lib/ntp/drift
+keys /etc/ntp/keys
+</code></pre>
+
+<p>As you can see I marked out linet #5 which is our old ntp decleration</p>
+
+<p>and added lines# 7-10:</p>
+
+<pre><code>&lt;% node[:ntp][:servers].each do |ntpsrv| -%&gt;
+  server &lt;%= ntpsrv %&gt; iburst
+  restrict &lt;%= ntpsrv %&gt; nomodify notrap noquery
+&lt;% end -%&gt;
+</code></pre>
+
+<p>chef will itterate over the array and inject the vlaues in our case whilst using defaults we will recieve the following:</p>
+
+<pre><code>  server 0.pool.ntp.org iburst
+ restrict 0.pool.ntp.org nomodify notrap noquery
+  server 1.pool.ntp.org iburst
+ restrict 1.pool.ntp.org nomodify notrap noquery
+  server 2.pool.ntp.org iburst
+ restrict 2.pool.ntp.org nomodify notrap noquery
+  server 3.pool.ntp.org iburst
+ restrict 3.pool.ntp.org nomodify notrap noquery
+</code></pre>
+
+<p>That's it all is left is to upload this cookbook to your chef server and add it to one of your nodes and you are good to go.</p>
+
+<pre><code>knife cookbook upload ntp
+</code></pre>
+
+<p>(you might want to bump the version up just so it becomes a habbit - edit the <em><strong>metadata.rb</strong></em> file under the recipies directory).</p>
+
+<p>Coming up [hopefully in the next few days] a test environment for chef cookbooks - I will be taking this example and present how to setup an environment for testing combining Chef-Solo (in case you don't have a chef server), <a href="http://www.vagrantup.com/">Vergrant </a>&amp; <a href="https://www.google.co.il/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;ved=0CDAQFjAA&amp;url=https%3A%2F%2Fwww.virtualbox.org%2F&amp;ei=cdf7UIK1NKTd4QTwp4CQBQ&amp;usg=AFQjCNHpshI_45ZdaFl7Mvf-glSeroKujQ&amp;sig2=470cYUQ3VveKdRKuE-2TYw&amp;bvm=bv.41248874,d.bGE">VirtualBox</a></p>
+
+<p>Fell free to comment / remark :)</p>
+]]></content>
+  </entry>
+  
+</feed>

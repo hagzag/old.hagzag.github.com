@@ -1,0 +1,852 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My Cup of Tea</title>
+  <meta name="author" content="Haggai Philip Zagury">
+
+  
+  <meta name="description" content="JBoss, Selenium, Maven, Hudson, M2 Extra Steps &amp; Files Found Trigger plugins - how do all these work together in a continuous build + Integration &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://hagzag.github.com/blog/page/2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Cup of Tea" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<meta property="fb:app_id" content="121979457984565" />
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38752767-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">My Cup of Tea</a></h1>
+  
+    <h2>Things I do, Things I say</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:hagzag.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/12/jboss/">JBoss, Selenium, Maven, Hudson, M2 Extra Steps & Files Found Trigger Plugins Playing Well Together</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-12T18:09:00+03:00" pubdate data-updated="true">Sep 12<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>JBoss, Selenium, Maven, Hudson, <a href="http://wiki.hudson-ci.org/display/HUDSON/M2+Extra+Steps+Plugin">M2 Extra Steps</a> &amp; <a href="http://wiki.hudson-ci.org/display/HUDSON/Files+Found+Trigger">Files Found Trigger</a> plugins - how do all these work together in a continuous build + Integration test life-cycle ?</p>
+
+<p><strong>The Story - The Use Case</strong>:</p>
+
+<p>We have two projects with two war artifacts which need to be deployed to a JBoss Application Server, whilst both webapps share a common base configuration, although the release life-cycle of each war have no correlation to the other.</p>
+
+<p>In production both application servers are running &amp; serving one another thus, Integration test should cover both JBoss instances &amp; test their web services.</p>
+
+<p>We are using selenium tests for both webapps and they need to run straight after a continuous build of each of the servers mentioned above. That said a change in project A or in project B should trigger the Integration tests job, whilst if either project A or project B are running the integration test plugin shouldn&#8217;t run (at least until both projects / one of them is complete).</p>
+
+<p><strong>The &#8220;work around&#8221; - forcing the &#8220;native Hudson&#8221; configuration</strong> (which we didn&#8217;t go with naturally):</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/09/12/jboss/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/12/CM-By-Anyone/">Configuration Management Position – Can Be Done by Anyone. Or Can It?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-12T18:09:00+03:00" pubdate data-updated="true">Sep 12<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>An interesting post on CM / RELENG see: <a href="http://www.dzone.com/links/r/configuration_management_position_can_be_done_by.html">http://www.dzone.com/links/r/configuration_management_position_can_be_done_by.html</a>
+<img src="/assets/images/iStock_000002678850Small-2.jpg" title="'CM'" >
+I just loved this image so &#8230;
+I think we can add to the What are CM responsibilities? in whole it&#8217;s a great straight to the point article.</p>
+
+<p>Enjoy</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/07/hudson-pinned-slash-pinning-plugins/">Hudson - Pinned/pinning Plugins</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-07T19:14:00+03:00" pubdate data-updated="true">Sep 7<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/assets/images/hudson_logo.png" title="'Hudson Logo'" >If you wish to &#8220;hang on&#8221; to a certain plugin which shipps with hudson.war just unpin it in the Manage Hudson >> Manage Plugins page - this option is availabe sine <a href="http://www.hudson-ci.org/download/war/1.374/hudson.war">1.374 release</a> (and you can alwasy grab the latest @: <a href="http://www.hudson-ci.org/latest/hudson.war">latest</a>)</p>
+
+<p>See full explanation below quoted from <a href="http://wiki.hudson-ci.org">hudson wiki</a>:</p>
+
+<p>The notion of <strong>pinned plugins</strong> applies to plugins that are bundled with Hudson, such as the Subversion plugin.</p>
+
+<p>Normally, when you upgrade/downgrade Hudson, its built-in plugins overwrite whatever versions of the plugins you currently have in $HUDSON_HOME. This ensures that you use the consistent version of those plugins. However, this behavior also means that those plugins can be never manually updated, as every time you start Hudson they&#8217;ll be replaced by the bundled versions.</p>
+
+<p>So when you manually update those bundled plugins, Hudson will mark those plugins as pinned to the particular version. Pinned plugins will never be overwritten by the bundled plugins during Hudson boot up. However, by definition, with pinned plugins you lose the benefit of automatic upgrade when you upgrade Hudson.</p>
+
+<p>So the plugin manager in Hudson allows you to explicitly unpin plugins. On file system, Hudson creates an empty file called $HUDSON_HOME/plugins/plugin.hpi.pinned to indicate the pinning. This file can be manually created/deleted to control the pinning behavior.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/01/remove-the-all-view-in-hudson-plus-view-enhancement-plugins/">Remove the All View in Hudson + View Enhancement Plugins</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-01T19:22:00+03:00" pubdate data-updated="true">Sep 1<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/assets/images/hudson_logo.png" title="'Hudson Logo'" >I had tow motivations of getting rid of the All view</p>
+
+<ol>
+<li>The <em><strong>All view</strong></em> is quite annoying don&#8217;t you think? After using Hudson for a while you have tens/hundreds of jobs lined up in a huge list - who needs that right.</li>
+<li>I wanted a &#8221;<em><strong>hidden jobs section</strong></em>&#8221; - Jobs no one but myself (and who ever needs access to it) can see.</li>
+</ol>
+
+
+<p>In order to get rid of it (the <em><strong>All view</strong>)****</em>simply:
+ </div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2010/09/01/remove-the-all-view-in-hudson-plus-view-enhancement-plugins/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/27/The-hudson-plugins-you-cant-live-without/">The Hudson Plug-ins You Can&#8217;t Live Without</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-27T09:18:00+03:00" pubdate data-updated="true">Aug 27<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/assets/images/hudson_logo.png" title="'Hudson Logo'" >This post was originally posted &amp; active @: <a href="http://www.tikalk.com/node/4994">http://www.tikalk.com</a>
+As a big fan of hudson-ci I would like to take a note of the most commonly used hudson plug-ins (at least by me) needed in order to maintain a good build environment.
+This list was collected as part of my experience in the last couple of years. I am sure your may differ then mine mine :).</p>
+
+<p><strong>Setenv plug-in</strong></p>
+
+<p>The <a href="http://wiki.hudson-ci.org/display/HUDSON/Setenv+plug-in">The Setenv plug-in</a> lets you set environment variables for a job upon build execution. During migration from CruiseControl I found this plug-in extremely useful, for I could provide the imported script the exact environment it had on the CC machine without the need to change a thing in the build&#8217;s logic / parameters, this also applied to the following recommended plug-in:</p>
+
+<p><strong>Parameterized Trigger plug-in</strong></p>
+
+<p>The <a href="http://wiki.hudson-ci.org/display/HUDSON/Parameterized+Trigger+plug-in">Parameterized Trigger</a> plug-in lets you add parameters to your build jobs that users enter when they trigger a build. This a very useful plug-in for release or deployment automation, for example, where you want to enter the version number (or label) you want to release or deploy. The biggest feature of this plug-in is the default value so even automatic / SCM triggers get a default value to execute silently.</p>
+
+<p><strong>The <a href="http://wiki.hudson-ci.org/display/HUDSON/Cygpath+plug-in">Cygpath plug-in</a></strong></p>
+
+<p><img class="left" src="/assets/images/small_cygwin-logo.jpg" title="'Cygpath plug-in'" > for a *nix oriented guy as myself, this was a great help, all our &#8220;special&#8221; shell script do not have to be re-written when we are running builds on Windows nodes - and yest we have too &#8230; :)</p>
+
+<p>The Cygpath gave me the opportunity to share tools between linux and windows machines this gave us the ability to maintain one tool repository for all our slave regardless of their architecture.</p>
+
+<p>And did I forget to say all you need it to enable this and automatically every batch executed on a windows slave will automatically use Cygwin ? from Cygpath wiki:</p>
+
+<ul>
+<li><p>You install Cygwin on all the Windows slaves</p></li>
+<li><p>Jobs on Hudson that assume Unix environment can now run on all the slaves (including Windows ones)</p></li>
+<li><p>In the system configuration, you use Unix paths for all your tools.</p></li>
+</ul>
+
+
+<p><strong>Promoted Builds plug-in</strong></p>
+
+<p><img class="left" src="/assets/images/promotion.png" title="'Promotion'" >Definitely the #1 plug-in on the list here - this plug-in enables you to do almost anything you can do in a certain Job but run it as a promotion task - if you wish to promote you build to your QA team for testing, or if you want to tag it in SVN or Deploy your artifacts to a maven repository, this is the plug-in you &#8220;cannot live without&#8221;. Without this plug-in you will need to configure a separate job or Bach Task (see <a href="http://wiki.hudson-ci.org/display/HUDSON/Batch+Task+plug-in">batch tasks plug-in</a> for more details) for every task you want to perform on your build - which makes managing Hudson job a nightmare &#8230;</p>
+
+<p><strong>Clover plug-in</strong></p>
+
+<p><img class="left" src="/assets/images/logo-clover.png" title="'Clover logo'" >
+<a href="http://www.atlassian.com/software/clover/">Clover</a> is a non-free code coverage tool which is the commercial alternative to Cobertura Emma etc, the Hudson <a href="http://wiki.hudson-ci.org/display/HUDSON/Clover+plug-in">Clover</a> plug-in is an amazing add on which integrates Clover reports and Historical reports into the build flow, which I found extremely helpful. Try configuring Clover to generate historical reports and then publish them to some third-party web server for viewing - this has made Clover integration a breeze, the challenge is even bigger with a distributed build environment which Hudson &amp; Clover plug-in have overcome.</p>
+
+<p><img src="/assets/images/CloverSS_0.png" alt="" /></p>
+
+<p>If you don&#8217;t have Clover, as mentioned above - the <a href="http://wiki.hudson-ci.org/display/HUDSON/Cobertura+plug-in">Cobertura</a> and <a href="http://wiki.hudson-ci.org/display/HUDSON/Emma+plug-in">Emma</a> plug-ins are great too which will also integrate with:</p>
+
+<p><strong>Sonar plug-in</strong></p>
+
+<p><img class="left" src="/assets/images/sonar_0.png" title="'Sonar logo'" >
+Although I am only &#8220;P.O.C ing&#8221; Sonar+Hudson+Clover, The <a href="http://wiki.hudson-ci.org/display/HUDSON/Sonar+plug-in">Sonar</a> plug-in made it trivial to integrate hudson projects with Sonar. <a href="http://sonar.codehaus.org/">Sonar</a> is a powerful open source code quality metrics reporting tool, which displays code quality metrics for multiple projects in a variety of ways on a centralized web location.</p>
+
+<p>For Maven based builds you do not even need to change a line of code in order to get sonar to work which made this module a <a href="http://search.twitter.com/search?q=%232">#2</a> on my &#8220;can&#8217;t live without plug-ins&#8221;.</p>
+
+<p><strong>Sectioned View plug-in<a href="http://wiki.hudson-ci.org/display/HUDSON/Setenv+plug-in"><br/>
+</a></strong></p>
+
+<p><a href="http://wiki.hudson-ci.org/display/HUDSON/Sectioned+View+plug-in">Sectioned view</a> gives you the ability to create a &#8220;Dashboard view&#8221; for your job(s) / project(s) - it is quite feature rich if you take a look at it&#8217;s configuration and it is very simple to comprehend. A great example is taken from the plug-ins wiki page see:</p>
+
+<p><img src="/assets/images/sectioned.png" alt="Section view scrrenshot" /></p>
+
+<p><strong>Nested Views plug-in</strong></p>
+
+<p><a href="http://wiki.hudson-ci.org/display/HUDSON/Nested+View+plug-in">Nested view</a>s another View type which allows grouping job views into multiple levels instead of one big list of tabs - this is quite useful and the only disadvantage is you can have both a view and jobs in the same page it&#8217;s either a nested view or a list of views - but I presume it will sure be included.</p>
+
+<p><strong>Shelve Project plug-in</strong></p>
+
+<p>If you ever wanted to Hide a jo you are working on and you also would like to prevent it from being triggered by mistake this is the plug-in for you. I often find my self setting up a job and it becomes a work in progress so hiding it to a later time is a great help - this plug-in does just that.</p>
+
+<p><strong>Bugzilla &amp; Jira plug-ins</strong> (&amp; there or others I presume)</p>
+
+<p><img class="left" src="/assets/images/bugzilla.png" title="'Bugzilla logo'" >Well the fact I need both in the same Hudson cluster and I can still have them work side by side was really important. In order for this plug-in to serve you well your CM team has to some extra work on your SCM side, that done you got yourself a link directly into your bug tracking system - the latest versions, query <a href="http://wiki.hudson-ci.org/display/HUDSON/Bugzilla+plug-in">Bugzilla</a> &amp; <a href="http://wiki.hudson-ci.org/display/HUDSON/JIRA+plug-in">Jira</a> and can display the Bug details.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/27/TManage-Drupal-With-Drush/">Managing Drupal With Drush (Drupal Shell)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-27T09:18:00+03:00" pubdate data-updated="true">Aug 27<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/assets/images/drush.png" title="'Drush Logo'" >Well, those of you who know me now I&#8217;ve become a very big Drupal fan and one of the tools that will make your life much easier is <a href="http://drupal.org/project/drush">Drush</a>. Drush short for Drupal Shell and it works just like one.</p>
+
+<p>Download <a href="http://drupal.org/project/drush">Drush</a> and add it to your path - assuming you are using unix/linux (if you are using Windows then a <a href="http://drupal.org/node/330023">tutorial can be found here</a> it actually works I&#8217;ve tried it).</p>
+
+<p>Drush dl will download latest stable Drupal to the current location ($PWD) and you are ready for your Drupal installation - OK so the bootstrap process isn&#8217;t that simple because you still need to setup your environment (http, php, mysql/some other supported DB) but still it takes are of the downloading part making sure you are using the latest version etc.</p>
+
+<p>The real power in Drush comes when you have a large site with a bundle of distributed modules, and you need to start managing dependencies and versions. The problem with the standard way, http://yoursite/admin/build/modules, is:</p>
+
+<ul>
+<li><p>It takes a year to load the page</p></li>
+<li><p>In order to solve dependencies you need to:</p></li>
+<li><p>Take a note of what you need to download</p></li>
+<li>Go to http://drupal.org/project/modules</li>
+<li>Search and download</li>
+<li>Upload to your server</li>
+</ul>
+
+
+<p>This seems like to much work - Drush does all that for you, just cd to your Drupal installation directory run <em><strong>drush dl <module name\></strong></em> and Drush will get it and extract it for you under your sites/default/modules directory.</p>
+
+<p>Another bonus is you don&#8217;t get stuck with those tar.gz files you need to manually remove after enabling the module.</p>
+
+<p>Thats not all, <em><strong>drush en <module name\></strong></em> &amp; <em><strong>drush up <module name\> </strong></em>will enable the module (again no need to navigate to sites/all/modules and use the check-box.</p>
+
+<p>If you run <em><strong>drush up</strong> </em>with no args Drush will attempt to update your Drupal installation and all the modules that need updates - be careful here for you do not want to break anything, for the upgrade includes your database tables !!!._<br/>
+_</p>
+
+<p>The last &#8220;bonus&#8221; is that Drush stores all the updated modules / files in &lt;site_root>/backup so you have all the old / updated data backed up in case you need to rollback (been there done that).</p>
+
+<p>For the full list of what drush can do for you - for exmaple if you rn multipul sites from the same drupal case and other options .. see drush help:</p>
+
+<p><code>_[me@mybox modules]# drush --help  
+Execute a drush command. Run \</code>drush help [command]` to view command-specific help.</p>
+
+<p>Examples:<br/>
+ drush dl cck zen                          Download CCK module and Zen theme.                  <br/>
+ drush &#8211;uri=http://example.com status     Show status command for the example.com multi-site. <br/>
+ drush help &#8211;pipe                         A space delimited list of commands                 </p>
+
+<p>Options:<br/>
+ -r <path>, &#8211;root=<path>                  Drupal root directory to use (default: current directory)                <br/>
+ -l <uri>, &#8211;uri=http://example.com        URI of the drupal site to use (only needed in multisite environments)    <br/>
+ -v, &#8211;verbose                             Display extra information about the command.                             <br/>
+ -d, &#8211;debug                               Display even more information, including internal messages.              <br/>
+ -q, &#8211;quiet                               Hide all output                                                          <br/>
+ -y, &#8211;yes                                 Assume &#8216;yes&#8217; as answer to all prompts                                    <br/>
+ -n, &#8211;no                                  Assume &#8216;no&#8217; as answer to all prompts                                     <br/>
+ -s, &#8211;simulate                            Simulate all relevant actions (don&#8217;t actually change the system)         <br/>
+ -i, &#8211;include                             A list of paths to search for drush commands                             <br/>
+ -c, &#8211;config                              Specify a config file to use. See example.drushrc.php                    <br/>
+ -u, &#8211;user                                Specify a user to login with. May be a name or a number.                 <br/>
+ -b, &#8211;backend                             Hide all output and return structured data (internal use only).          <br/>
+ -p, &#8211;pipe                                Emit a compact representation of the command for scripting.              <br/>
+ &#8211;nocolor                                 Suppress color highlighting on log messages.                             <br/>
+ &#8211;show-passwords                          Show database passwords in commands that display connection information. <br/>
+ -h, &#8211;help                                This help system.                                                        <br/>
+ &#8211;php                                     The absolute path to your PHP intepreter, if not &#8216;php&#8217; in the path. _`</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/17/Job-configuration-change-in-Hudson-1.372/">Job Configuration Change in Hudson 1.372</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-17T09:11:00+03:00" pubdate data-updated="true">Aug 17<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/assets/images/hudson_logo.png" title="'Hudson Logo'" >Yesterday I upgraded hudson to the greatest an latest which was a seamless upgrade.</p>
+
+<p>A very obvious change in the Job configuration form was added instead of &#8221;<strong>Tie Build to a node</strong>&#8221;:
+<img src="/assets/images/old-slave-daialog_0.png" title="'old_slave_selection_dialog'" ></p>
+
+<p>There is now <strong>&#8220;Restrict where this project can be run&#8221;</strong>:</p>
+
+<p><img src="/assets/images/new-slave-daialog_0.png" title="'new__slave_selection_dialog'" ></p>
+
+<p>The disadvantage in this feature is if you want to a build to a node you need to know its name / node group name prior to the actual configuration. The Advantage of this feature is you can be more specific in where you want you build to run and with a large number of slaves this is quite important, <strong>Please note</strong>: &#8220;old&#8221; jobs aren&#8217;t affected of this change.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/05/xvfb-tunning-headless-cellnium-test-with-hudson/">Using Xvfb to Run Headless Cucumber/selenium Tests With Hudson</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-05T09:11:00+03:00" pubdate data-updated="true">Jul 5<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="left" src="/assets/images/hudson_logo.png" title="'Hudson Logo'" >Needed to run Sellenium tests myself on Linux (RHEL5 &amp; 4) didn&#8217;t have this article to help me then see:</p>
+
+<p><a href="http://markgandolfo.com/2010/07/01/hudson-ci-server-running-cucumber-in-headless-mode-xvfb" title="http://markgandolfo.com/2010/07/01/hudson-ci-server-running-cucumber-in-headless-mode-xvfb">http://markgandolfo.com/2010/07/01/hudson-ci-server-running-cucumber-in-&#8230;</a></p>
+
+<p><strong>RHEL4 users please note:</strong></p>
+
+<ol>
+<li>you will need <strong>xorg-x11-Xvfb</strong> and not <strong>xorg-x11-server-Xvfb</strong> as stated in the above article.</li>
+<li>if you need Firefox (well who doesen&#8217;t :) make sure you install it - it isn&#8217;t installed by default on RHEL!.</li>
+</ol>
+
+
+<p>Hope you find this useful (I know I did &#8230;)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/26/Java-4-Ever/">Java 4 Ever - Two Thumbs Up for the Production</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-26T09:11:00+03:00" pubdate data-updated="true">Jun 26<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This video speaks for itself &#8230;</p>
+
+<div markdown="1"><object width="400" height="320" type="application/x-shockwave-flash" data="http://www.koreus.com/video/java-4-ever"> <param name="movie" value="http://www.koreus.com/video/java-4-ever"><embed width="400" height="320" src="http://www.koreus.com/video/java-4-ever" type="application/x-shockwave-flash"></object><br> <a href="http://www.koreus.com/video/java-4-ever.html">Java 4-Ever</a> - <a href="http://www.koreus.com/">Buzz</a>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/06/laearn-ci-from-the-source/">Learn About Continuous Integration With Hudson Directly From the Source</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-06T09:11:00+02:00" pubdate data-updated="true">Mar 6<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>No explanations needed - just watch this video if you can spare the time &#8230;</p>
+
+<div markdown="1">
+<object width="640" height="385"> <param value="http://www.youtube.com/v/6k0S4O2PnTc&amp;hl=en_US&amp;fs=1&amp;" name="movie"> <param value="true" name="allowFullScreen"> <param value="always" name="allowscriptaccess"><embed width="640" height="385" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://www.youtube.com/v/6k0S4O2PnTc&amp;hl=en_US&amp;fs=1&amp;"></object>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/3/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    
+<section>
+	<span>
+		<img src="http://www.gravatar.com/avatar/2450c87c660a9366d69513c987d332d5" alt="Gravatar of Haggai Philip Zagury " title="Gravatar of Haggai Philip Zagury" />
+	</span>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/why-octopress/">Why Octopress ?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/adding-facbook-comments-to-octopress/">Adding Facebook comments to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/introduction-2-opscode-chef-slash-or-chef-for-newbiees-slash/">Introduction 2 Opscode Chef (or chef for newbiees)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/20/writing-a-chef-cookbook/">Writing a Chef Cookbook, or writing your first cookbook</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/30/installing-chef-server-on-cnetos-5-dot-8/">Installing Chef Server - On CnetOs 5.8</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/hagzag">@hagzag</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'hagzag',
+            count: 5,
+            skip_forks: false,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("hagzag", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/hagzag" class="twitter-follow-button" data-show-count="false">Follow @hagzag</a>
+  
+</section>
+
+
+
+<section>
+  <h1>Coderwall</h1>
+  <ul id="cw_badges">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+
+  <script type="text/javascript">
+    var coderwall = (function(){
+      function render(options, badges){
+        var fragment = '',
+            t = $(options.target)[0],
+            height = 65,
+            width = 65,
+            index;
+
+        for (index in badges) {
+          fragment += '<a class="cw_badge"title="' + badges[index].description + '" href="http://coderwall.com/' + options.user + '">';
+          fragment +=   '<img alt="' + badges[index].description + '" height="' + width + '" width="' + height + '" src="' + badges[index].badge + '"/>';
+          fragment += '</a>';
+        }
+
+        t.innerHTML = fragment;
+      }
+      return {
+        showBadges: function(options){
+          $.ajax({
+              url: 'http://coderwall.com/' + options.user + '.json?callback=?'
+            , type: 'jsonp'
+            , error: function (err) { $(options.target + ' li.loading').addClass('error').text("Error loading feed"); }
+            , success: function(res) {
+                render(options, res.data.badges);
+            }
+          });
+        }
+      };
+    })();
+
+    $.domReady(function(){
+      if (!window.jXHR){
+        var jxhr = document.createElement('script');
+        jxhr.type = 'text/javascript';
+        jxhr.src = '/javascripts/libs/jXHR.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(jxhr, s);
+      }
+      if (!window.$){
+        var b = document.createElement('script');
+        b.type = 'text/javascript';
+        b.src = '/javascripts/ender.js';
+        var sc = document.getElementsByTagName('script')[0];
+        sc.parentNode.insertBefore(jxhr, s);
+      }
+      coderwall.showBadges({
+        user: 'hagzag',
+        target: '#cw_badges'
+      });
+    });
+  </script>
+  <style type="text/css">
+    .cw_badge img {
+      padding: 5px;
+      border: 0 none !important;
+      -moz-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      -o-box-shadow: none !important;
+      box-shadow: none !important;
+    }
+  </style>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/hagzag?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Haggai Philip Zagury -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

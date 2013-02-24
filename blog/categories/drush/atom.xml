@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Drush | My Cup of Tea]]></title>
+  <link href="http://hagzag.github.com/blog/categories/drush/atom.xml" rel="self"/>
+  <link href="http://hagzag.github.com/"/>
+  <updated>2013-02-25T00:04:59+02:00</updated>
+  <id>http://hagzag.github.com/</id>
+  <author>
+    <name><![CDATA[Haggai Philip Zagury]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Managing drupal with Drush (Drupal Shell)]]></title>
+    <link href="http://hagzag.github.com/blog/2010/08/27/TManage-Drupal-With-Drush/"/>
+    <updated>2010-08-27T09:18:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2010/08/27/TManage-Drupal-With-Drush</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/assets/images/drush.png" title="'Drush Logo'" >Well, those of you who know me now I've become a very big Drupal fan and one of the tools that will make your life much easier is <a href="http://drupal.org/project/drush">Drush</a>. Drush short for Drupal Shell and it works just like one.</p>
+
+<p>Download <a href="http://drupal.org/project/drush">Drush</a> and add it to your path - assuming you are using unix/linux (if you are using Windows then a <a href="http://drupal.org/node/330023">tutorial can be found here</a> it actually works I've tried it).</p>
+
+<p>Drush dl will download latest stable Drupal to the current location ($PWD) and you are ready for your Drupal installation - OK so the bootstrap process isn't that simple because you still need to setup your environment (http, php, mysql/some other supported DB) but still it takes are of the downloading part making sure you are using the latest version etc.</p>
+
+<p>The real power in Drush comes when you have a large site with a bundle of distributed modules, and you need to start managing dependencies and versions. The problem with the standard way, http://yoursite/admin/build/modules, is:</p>
+
+<ul>
+<li><p>It takes a year to load the page</p></li>
+<li><p>In order to solve dependencies you need to:</p></li>
+<li><p>Take a note of what you need to download</p></li>
+<li>Go to http://drupal.org/project/modules</li>
+<li>Search and download</li>
+<li>Upload to your server</li>
+</ul>
+
+
+<p>This seems like to much work - Drush does all that for you, just cd to your Drupal installation directory run <em><strong>drush dl <module name\></strong></em> and Drush will get it and extract it for you under your sites/default/modules directory.</p>
+
+<p>Another bonus is you don't get stuck with those tar.gz files you need to manually remove after enabling the module.</p>
+
+<p>Thats not all, <em><strong>drush en <module name\></strong></em> &amp; <em><strong>drush up <module name\> </strong></em>will enable the module (again no need to navigate to sites/all/modules and use the check-box.</p>
+
+<p>If you run <em><strong>drush up</strong> </em>with no args Drush will attempt to update your Drupal installation and all the modules that need updates - be careful here for you do not want to break anything, for the upgrade includes your database tables !!!._<br/>
+_</p>
+
+<p>The last "bonus" is that Drush stores all the updated modules / files in &lt;site_root>/backup so you have all the old / updated data backed up in case you need to rollback (been there done that).</p>
+
+<p>For the full list of what drush can do for you - for exmaple if you rn multipul sites from the same drupal case and other options .. see drush help:</p>
+
+<p><code>_[me@mybox modules]# drush --help  
+Execute a drush command. Run \</code>drush help [command]` to view command-specific help.</p>
+
+<p>Examples:<br/>
+ drush dl cck zen                          Download CCK module and Zen theme.                  <br/>
+ drush --uri=http://example.com status     Show status command for the example.com multi-site. <br/>
+ drush help --pipe                         A space delimited list of commands                 </p>
+
+<p>Options:<br/>
+ -r <path>, --root=<path>                  Drupal root directory to use (default: current directory)                <br/>
+ -l <uri>, --uri=http://example.com        URI of the drupal site to use (only needed in multisite environments)    <br/>
+ -v, --verbose                             Display extra information about the command.                             <br/>
+ -d, --debug                               Display even more information, including internal messages.              <br/>
+ -q, --quiet                               Hide all output                                                          <br/>
+ -y, --yes                                 Assume 'yes' as answer to all prompts                                    <br/>
+ -n, --no                                  Assume 'no' as answer to all prompts                                     <br/>
+ -s, --simulate                            Simulate all relevant actions (don't actually change the system)         <br/>
+ -i, --include                             A list of paths to search for drush commands                             <br/>
+ -c, --config                              Specify a config file to use. See example.drushrc.php                    <br/>
+ -u, --user                                Specify a user to login with. May be a name or a number.                 <br/>
+ -b, --backend                             Hide all output and return structured data (internal use only).          <br/>
+ -p, --pipe                                Emit a compact representation of the command for scripting.              <br/>
+ --nocolor                                 Suppress color highlighting on log messages.                             <br/>
+ --show-passwords                          Show database passwords in commands that display connection information. <br/>
+ -h, --help                                This help system.                                                        <br/>
+ --php                                     The absolute path to your PHP intepreter, if not 'php' in the path. _`</p>
+]]></content>
+  </entry>
+  
+</feed>

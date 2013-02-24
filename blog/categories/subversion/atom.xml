@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Subversion | My Cup of Tea]]></title>
+  <link href="http://hagzag.github.com/blog/categories/subversion/atom.xml" rel="self"/>
+  <link href="http://hagzag.github.com/"/>
+  <updated>2013-02-25T00:04:59+02:00</updated>
+  <id>http://hagzag.github.com/</id>
+  <author>
+    <name><![CDATA[Haggai Philip Zagury]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Subversion hot-backup change in 1.6.11]]></title>
+    <link href="http://hagzag.github.com/blog/2011/07/19/Subversion-hot-backup-change-in/"/>
+    <updated>2011-07-19T09:11:00+03:00</updated>
+    <id>http://hagzag.github.com/blog/2011/07/19/Subversion-hot-backup-change-in</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/assets/images/subversion.jpg" title="'Subversion Logo'" >An important notice to users of the hot-backup.py utility which ships with subversion.</p>
+
+<p>I found our nightly backup of subversion was failing with the following error:</p>
+
+<pre><code>svnadmin: Can't open file '/pathtorepo/db/fsfs.conf': No such file or directory
+</code></pre>
+
+<p>What was troubling me was:</p>
+
+<ol>
+<li>How come a file is missing in my svn repository - nothing has changes (As far as I know ... :)</li>
+<li>hot-backup.py script hasen't changed much, how come my version has changed ?</li>
+</ol>
+
+
+<p>So I looked up the subversion's change log: http://svn.apache.org/repos/asf/subversion/tags/1.6.12/CHANGES which is the latest release (1.6.12) and took a look on my svn machine to find which version was installed and I found 1.6.12 was indeed in talled and in 1.6.11 release notes you will find:</p>
+
+<pre><code>* make 'svnadmin hotcopy' copy the fsfs config file (r905303)
+</code></pre>
+
+<p>In addition I took a look at hot-bakup.py change log under: http://svn.apache.org/viewvc/subversion/trunk/tools/backup/hot-backup.py.in?view=log, and found that indeed the fsfs file has be included in the hotbackup script since the 1.6.11 version of the file (see link speified above).</p>
+
+<p>Googeling on the fsfs.conf subject led me to: http://comments.gmane.org/gmane.comp.version-control.subversion.user/97647 which noted the same exact issue.</p>
+
+<p><strong>How do we solve this issue</strong><strong>?</strong></p>
+
+<ol>
+<li>Create a test repository - svnadmin create /tmp/svntest which will create the fsfs.conf under /tmp/svntest/db/fsfs.conf</li>
+<li>Copy the fsfs.conf to your svnroot/db directory and walla you have the fsfs.conf (what this file does is a different topic)</li>
+</ol>
+
+
+<p>Please note:</p>
+
+<p>1. The svnadmin upgrade -<strong>Doesn't add this file so unless you are using an old veriosn of the hot-backup.py script your backups will fail!!!</strong> (beleive me I tried).</p>
+
+<p>2. If you update subverison - don't forget to run <em>svnadmin upgrade /pathto yourrepo/</em> or you miss all the point of upgrading</p>
+
+<p>So I've learened that subversion was upgraded (again which doesn't say your repository was upgraded!!!) - but when? - considering the fact I am running CentOS - and I didn't have to compile SVN from source and start checking the subversion binaries Creation / Update time I used RPM to tell me when subverions was installed and there is was:</p>
+
+<pre><code>[root@dev ~]# rpm -qi subversion
+Name        : subversion                   Relocations: (not relocatable)
+Version     : 1.6.12                       Vendor: Dag Apt Repository
+Release     : 0.1.el5.rf                   Build Date: Tue 22 Jun 2010 12:55:11 PM IDT
+Install Date: Mon 19 Jul 2010 12:36:54 AM IDT      Build Host: lisse.hasselt.wieers.com
+Group       : Development/Tools             Source RPM: subversion-1.6.12-0.1.el5.rf.src.rpm
+Size        : 21247326                         License: BSD
+Signature   : DSA/SHA1, Tue 22 Jun 2010 04:46:18 PM IDT, Key ID a20e52146b8d79e6
+Packager    : Dag Wieers 
+</code></pre>
+
+<p>I think the <a href="http://search.twitter.com/search?q=%231">#1</a> lesson learned here is before you upgrade read the release notes, see if it impacts you environment in any way - then you can upgrade.</p>
+
+<p>Hope you find this useful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learn About Continuous Integration With Hudson Directly From the Source]]></title>
+    <link href="http://hagzag.github.com/blog/2010/03/06/laearn-ci-from-the-source/"/>
+    <updated>2010-03-06T09:11:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2010/03/06/laearn-ci-from-the-source</id>
+    <content type="html"><![CDATA[<p>No explanations needed - just watch this video if you can spare the time ...</p>
+
+<div markdown="1">
+<object width="640" height="385"> <param value="http://www.youtube.com/v/6k0S4O2PnTc&amp;hl=en_US&amp;fs=1&amp;" name="movie"> <param value="true" name="allowFullScreen"> <param value="always" name="allowscriptaccess"><embed width="640" height="385" allowfullscreen="true" allowscriptaccess="always" type="application/x-shockwave-flash" src="http://www.youtube.com/v/6k0S4O2PnTc&amp;hl=en_US&amp;fs=1&amp;"></object>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Apprentelly Ant-1.80RC1 has been release on the 12th of January 2010]]></title>
+    <link href="http://hagzag.github.com/blog/2010/01/06/Ant-early-release/"/>
+    <updated>2010-01-06T09:11:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2010/01/06/Ant-early-release</id>
+    <content type="html"><![CDATA[<p>Apparently without us noticing it is the 12th of January already and Ant 1.80RC1 has been released :)</p>
+
+<p><img src="/assets/images/ant-180RC1.PNG" alt="Ant - 1.80RC1" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Subversion - server-side action - auto add property to file]]></title>
+    <link href="http://hagzag.github.com/blog/2008/11/09/subversion-server-side-action/"/>
+    <updated>2008-11-09T09:11:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2008/11/09/subversion-server-side-action</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/assets/images/subversion.jpg" title="'Subversion Logo'" ><strong>Problem:</strong></p>
+
+<p>I am at a clients location which develops on windows and the "EOL" end of line is what is called CRLF unlike unix/linux which is naturally the servers platform which uses LF only (<a href="http://svnbook.red-bean.com/en/1.1/ch07s02.html">more details about CRLF/LF here</a>).</p>
+
+<p style="text-align:center;">we had to solve two issues</p>
+
+<ol>
+<li>Set a property on the level of SVN to set a default EOL of CRLF to certain file types for example .bat and .properties</li>
+<li>Set the property to all the files with those extensions which already exist in repository.</li>
+</ol>
+
+
+<p>For issue <strong><a href="http://search.twitter.com/search?q=%231">#1</a></strong> a few methods could apply in the client side - but we wanted to solve this on server side after investigating this issue the solution was quite simple - with the help of our ALM team of course.</p>
+
+<p>Edit the file called svnserve which is located under $SVNROOT/conf/svnserve.conf and add the following lines:</p>
+
+<pre><code>[miscellany]
+enable-auto-props = yes 
+[auto-props]
+*.png = svn:mime-type=image/png
+*.jpg = svn:mime-type=image/jpeg
+*.bat = svn:eol-style=CRLF
+*.txt = svn:eol-style=CRLF
+*.properties = svn:eol-style=CRLF
+</code></pre>
+
+<p>As you can see I added a few more extensions while I was at it.</p>
+
+<p><strong>Please note:</strong></p>
+
+<p>SVN usually "guesses" the type of file and has a classification called "native" the native classification tags the file in its native OS mode for example a .sh file will automatically receive an LF end of line although I guess there are a few extensions which SVN doesn't recognize the result would be a file which is broken up into two lines instead of the original line brakes the developer used whilst editing the file.</p>
+
+<p>for issue <a href="http://search.twitter.com/search?q=%232">#2</a> this has two methods</p>
+
+<p>one: commit files manually + add  svn:eol-style=CRLF to each file then commit it to SVN and of course from this revision onwards the file will have a CRLF eol</p>
+
+<p>second: and the more elegant way is two write a short script which will set a property to all files with .bat &amp; .properties extension and of course submit this to SVN.</p>
+
+<p>I used the following <a href="http://svn.collab.net/repos/svn/trunk/contrib/client-side/svn_apply_autoprops.py">script</a>:  checkout the repository you wish to enforce the properties on in my case "trunk"</p>
+
+<pre><code>[Myserver]$ mkdir trunk
+[Myserver]$ svn co http://Myserver/svn/repos/trunk trunk
+[Myserver]$ cd trunk
+[Myserver]$ wget http://svn.collab.net/repos/svn/trunk/contrib/client-side/svn_apply_autoprops.py
+[Myserver]$ chmod u+x svn_apply_autoprops.py
+</code></pre>
+
+<p>now run the script - the script automatically runs on CWD "."!</p>
+
+<pre><code>[Myserver]$./svn_apply_autoprops.py
+ 
+</code></pre>
+
+<p>check a few of your files to see that properties were set to your specification - the specifiactaions are inherited from the $SVNROOT/conf/svnconf.conf file as stated earlier in this article.</p>
+
+<pre><code>[Myserver]$ svn pl svn pl base/javalib/antInstaller/LICENSE-ant.txt
+</code></pre>
+
+<p>your output should be something like:</p>
+
+<p>Properties on 'base/javalib/antInstaller/LICENSE-ant.txt':<br/>
+svn:eol-style</p>
+
+<p>you can do the same checkup with tortoise.</p>
+
+<p>Once you are sure all properties were made to your WC to your satisfaction you can commit your changes to repository (you will have to have "rw" perms to trunk in order to commit !)</p>
+
+<pre><code>[Myserver]$ svn commit http://myserver/svn/repos/trunk -m "add properties to files / CRLF property"
+</code></pre>
+
+<p>update / checkout from a different machine / working copy and see if your changes were submitted successfully -</p>
+
+<p>Thats it, mission accomplished.</p>
+
+<p>Hope you find this useful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Subversion: set property to multiple & existent files]]></title>
+    <link href="http://hagzag.github.com/blog/2008/11/08/subversion-propertyset/"/>
+    <updated>2008-11-08T19:14:00+02:00</updated>
+    <id>http://hagzag.github.com/blog/2008/11/08/subversion-propertyset</id>
+    <content type="html"><![CDATA[<p><img class="left" src="/assets/images/subversion.jpg" title="'Subversion Logo'" >In continuation to my post earlier this month, regarding setting a automatic property to a file in svn. The issue I dealt with in that post was a property set that would be given only to newly created files, meaning only new files with the given extension would receive the specific type of property. What I encountered now was a case where I had to set a specific property on a large number of files which were already committed to svn.</p>
+
+<p>Well, one could spend a week locating those files and setting the properties manually but the elegant way would be to write a short shell script which will do the job for you.</p>
+
+<p>so because I had multiple locations I chose to run the script on the server itself so I am not hanging on http protocol + I am using svn file and not http but this can be easily done by via http too.</p>
+
+<p>So if your svn is build out of trunk, branches and tags so I would like to go over trunk for example and checkout first level directories look for a file extension and change its property (of course If you want to set more then one property you will have to modify this script) then set its property and commit so I created a file containing the names of the first level directories after trunk and out them into a file called trunk.list</p>
+
+<p>Task list:
+1. checkout from svn
+2. find files with extension .properties (or any other extention I/you desire)</p>
+
+<ol>
+<li>set svn property eol CRLF</li>
+<li>commit change to svn</li>
+</ol>
+
+
+<p>So I wrote in bash a short loop that would read the file and for each line do the four tasks I wanted:</p>
+
+<pre><code> #!/bin/bash
+
+ #set vars
+ SVNUSER=opencm
+ SVNPASS=opencm
+ file=$2
+ cat $file | while read line;
+ do
+ # "now" var will be used for commit message
+ now=`date +%Y_%m_%d_%T`
+ # checkout
+ svn co --username $SVNUSER --password $SVNPASS file:///path-to-svnroot/trunk/$line /tmp/$line
+ cd /tmp/$line
+ # set the property of CRLF to the found files
+ find&amp;nbsp; /tmp/$line -name "*.$1" | xargs -r svn propset svn:eol-style CRLF
+ # commit the changes to svn
+ svn commit -m "setting svnprop eol=CRLF done on $now"
+ # remove eorking copy
+ rm /tmp/$line -Rf
+
+ done
+ exit 0
+
+ #EOF
+</code></pre>
+
+<p>to execute the command you need to command line args $1 file extension for example txt and $2 is the list of the directories you are checking out of svn so from command prompt it should look like:</p>
+
+<pre><code>[opencm@localhost ]# ./chgCRLFprop.bash txt trunk.list
+</code></pre>
+
+<p>And if you really want to continue working in the process add this "> chgCRLFprop.log 2>&amp;1 &amp;" to the end of the command which will send the job to the background and you can also reference the log if you like.</p>
+
+<p>Give it a test run first running the script without the svn commit.</p>
+]]></content>
+  </entry>
+  
+</feed>
