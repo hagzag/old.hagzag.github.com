@@ -19,9 +19,10 @@ At the end of this post \[or now if you really insist\] you can clone [https://g
     
 
 **Step 1: Install the service you want to recipe ... **
-
+{% codeblock lang:bash %}
     yum install ntp
     rpm -ql ntp
+{% endcodeblock %}
 
 Identify:
 
@@ -36,91 +37,98 @@ I found the following:
     
 
 **Step 2: Setup a git repository \[clone opscode's "template" repository\]**
-
+{% codeblock lang:bash %}
     git clone git://github.com/opscode/chef-repo.git
+{% endcodeblock %}
 
 **Step 3: Create a cookbook  \[named ntp\]**
-
+{% codeblock lang:bash %}
     cd ~/chef-repo
     knife cookbook create ntp
-    
+{% endcodeblock %}    
 
 The knife command above will create the foloowing structure \[under cookbooks directory\]:
-
+{% codeblock lang:bash %}
     attributes/ 
     definitions/
     files/ 
     libraries/
-    **metadata.rb** 
+    metadata.rb 
     providers/ 
     README.rdoc 
-    **recipes/** 
+    recipes/
     resources/ 
-    **templates/** 
+    templates/
+{% endcodeblock %}
 
 We **won't** be using all of these in this tutorial ... highlighted are the ones we are going to use (at this stage)
 
 **Step 4: Create the recipe**
-
+{% codeblock lang:bash %}
     vim  cookbooks/ntp/recipes/default.rb
+{% endcodeblock %}
 
 Add the following ruby code \[[link][3]\]:
-
-    package "ntp" do
-        action [:install]
-    end
+{% codeblock lang:ruby %}
+package "ntp" do
+    action [:install]
+end
      
-    template "/etc/ntp.conf" do
-        source "ntp.conf.erb"
-        variables( :ntp_server => "time.nist.gov" )
-        notifies :restart, "service[ntpd]"
-    end
+template "/etc/ntp.conf" do
+    source "ntp.conf.erb"
+    variables( :ntp_server => "time.nist.gov" )
+    notifies :restart, "service[ntpd]"
+end
      
-    service "ntpd" do
-        action [:enable,:start]
-    end
+service "ntpd" do
+    action [:enable,:start]
+end
+{% endcodeblock %}
 
 The first block of code will use chefs built-in packadge installer providor to use the os's package manager (in our case yum/rpm) and use the service name "ntp" the one we located whilst installing the package in step1 above.
 
 **Step 5: Create a template**
-
-    vim cookbooks/ntp/templates/default/ntp.conf.erb
+{% codeblock lang:bash %}
+vim cookbooks/ntp/templates/default/ntp.conf.erb
+{% endcodeblock %}
 
 Unlike files which are placed by chef "as is" files under templates folder ending with **erb** are interpolated and created on the **node **during a chef-client run.
 
 The content of the file \[[link][4]\]:
-
-    restrict default kod nomodify notrap nopeer noquery
-    restrict -6 default kod nomodify notrap nopeer noquery
-    restrict 127.0.0.1
-    restrict -6 ::1
-    server <%= @ntp_server %>
-    server  127.127.1.0     # local clock
+{% codeblock lang:ruby %}
+restrict default kod nomodify notrap nopeer noquery
+restrict -6 default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1
+restrict -6 ::1
+server <%= @ntp_server %>
+server  127.127.1.0     # local clock
     driftfile /var/lib/ntp/drift
     keys /etc/ntp/keys
+{% endcodeblock %}
 
 In this simple use case line \#7 from  cookbooks/ntp/recipes/default.rb will be the one setting the ntp\_server parameter for the tempalte file in line \#5 of the template above.
 
 At this stage you could create a **role **add this recipe to a**run\_list **and it will just work ... until you try to apply this recipe on **ubuntu **for example, there you will find an issue with the service name ... and whilst were at it , let's add support for more than one ntp server \[in case the single one we added is down :(\].
-
+{% codeblock lang:bash %}
     apt-get install ntp
+{% endcodeblock %}
 
-Will revieal the issue I just mentioned
-
-and 
-    
-    dpkg -L ntp 
+Will reveal the issue I just mentioned and 
+{% codeblock lang:bash %} 
+dpkg -L ntp
+{% endcodeblock %}
 
 will give us the list of files \[ /etc/ntp.conf \] and service name \[ ntp \] =\> notice in this case there is no "d" at the end.
 
 **Step 6: Improovment \#1 - adding service name resolution to our recipe**
 
 Add an attributes file:
-
+{% codeblock lang:bash %}
     vim  cookbooks/ntp/attributes/default.rb
+{% endcodeblock %}
 
 With the following content:
-
+{% codeblock lang:ruby %}
     case platform
     when "redhat","centos","fedora","scientific"
       default[:ntp][:service] = "ntpd"
@@ -129,11 +137,12 @@ With the following content:
     else
       default[:ntp][:service] = "ntpd"
     end
+{% endcodeblock %}
 
-This case statment will help our recipe in the service name resolution for redhat / centos & other rpm based distros "**ntpd**" for ubutnu / debian use "**ntp**".
+This case statement will help our recipe in the service name resolution for redhat / centos & other rpm based distros "**ntpd**" for ubutnu / debian use "**ntp**".
 
 Let's tell our recipe to respect this attribute ...:
-
+{% codeblock lang:ruby %}
     package "ntp" do                                
         action [:install]                           
     end
@@ -150,18 +159,19 @@ Let's tell our recipe to respect this attribute ...:
         mode 0644                                   
         notifies :restart, resources(:service => node[:ntp][:service])
     end
-    
+{% endcodeblock %}    
 
 The diff is in line \#7 & line \#12 which now uses the node:\[ntp\]\[:service\] attribute we defined in the _**attributes.rb**_ file above.
 
 **Step 7: Add support for more than 1 ntp server**
 
 In cookbooks/ntp/attributes/default.rb file add the following array:
-
+{% codeblock lang:ruby %}
     default[:ntp][:servers] = ["0.pool.ntp.org", "1.pool.ntp.org", "2.pool.ntp.org", "3.pool.ntp.org"]
+{% endcodeblock %}
 
 And in our template file let's add support for more than one line of ntp server:
-
+{% codeblock lang:ruby %}
     # Generated by Chef for <%= node[:fqdn] %> 
     # node[:fqdn] = ohai data collected on node !
     # Local modifications will be overwritten.
@@ -181,18 +191,20 @@ And in our template file let's add support for more than one line of ntp server:
     server  127.127.1.0     # local clock
     driftfile /var/lib/ntp/drift
     keys /etc/ntp/keys
+{% endcodeblock %}
 
 As you can see I marked out linet \#5 which is our old ntp decleration
 
 and added lines\# 7-10:
-
+{% codeblock lang:ruby %}
     <% node[:ntp][:servers].each do |ntpsrv| -%>
       server <%= ntpsrv %> iburst
       restrict <%= ntpsrv %> nomodify notrap noquery
     <% end -%>
+{% endcodeblock %}
 
 chef will itterate over the array and inject the vlaues in our case whilst using defaults we will recieve the following:
-
+{% codeblock lang:bash %}
       server 0.pool.ntp.org iburst
      restrict 0.pool.ntp.org nomodify notrap noquery
       server 1.pool.ntp.org iburst
@@ -201,10 +213,12 @@ chef will itterate over the array and inject the vlaues in our case whilst using
      restrict 2.pool.ntp.org nomodify notrap noquery
       server 3.pool.ntp.org iburst
      restrict 3.pool.ntp.org nomodify notrap noquery
+{% endcodeblock %}
 
 That's it all is left is to upload this cookbook to your chef server and add it to one of your nodes and you are good to go.
-
+{% codeblock lang:bash %}
     knife cookbook upload ntp
+{% endcodeblock %}
 
 (you might want to bump the version up just so it becomes a habbit - edit the _**metadata.rb**_ file under the recipies directory).
 
