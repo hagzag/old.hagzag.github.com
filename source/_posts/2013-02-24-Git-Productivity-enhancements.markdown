@@ -14,6 +14,7 @@ wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bas
 Upon next login (or execute _source /etc/bash_completion.d/git_) right away and you have all the bash completion you need for git at your finger tips.
 
 Another awesome script to make your life easier with git is [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) which you can also include in your bash profile like so:
-     wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
-
-then add a line to ~/.profile sourcing it upon login shell
+{% codeblock lang:bash %}
+wget https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh
+{% endcodeblock %}
+then add a line to ~/.profile sourcing it upon login shell, see header of git-prompt.sh for more details.
