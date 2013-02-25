@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git Productivity enhancements"
-date: 2013-02-24 13:11
+date: 2013-02-25 09:25
 comments: true
 categories: [Git, bash completion, bash, productivity, CLI]
 ---
